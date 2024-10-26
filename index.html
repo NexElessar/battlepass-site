@@ -3,98 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Royal Pass</title>
-    <style>
-        /* Sayfa boyutu */
-        html, body {
-            width: 700px;
-            height: 450px;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url('backround.png'); /* Arka plan dosyasının yolu */
-            background-size: cover;
-            background-repeat: no-repeat;
-            font-family: Arial, sans-serif;
-            color: #ffd700;
-            box-sizing: border-box;
-        }
-
-        /* Başlık */
-        .title {
-            font-weight: bold;
-            text-align: left;
-            position: absolute;
-            top: 10px;
-            left: 20px;
-        }
-
-        /* Free ve Premium Pass slot konteynerleri */
-        .pass-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        /* Slot satırları */
-        .slot-column {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-        }
-
-        /* Slot stili */
-        .slot {
-            width: 52px;
-            height: 52px;
-            background-image: url('itemslot_1.png'); /* Slot görselinin yolu */
-            background-size: cover;
-        }
-
-        /* Başlık stili */
-        .pass-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-    </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0; width: 700px; height: 450px; background-color: #2b1f1d; color: #ffd700;">
 
-<div class="title">Royal Pass</div>
+    <!-- Arka plan ve başlık -->
+    <div style="width: 700px; height: 450px; background-image: url('backround.png'); padding: 10px; box-sizing: border-box;">
+        <h2 style="margin: 0; text-align: left;">Royal Pass</h2>
 
-<div class="pass-container">
-    <!-- Free Pass -->
-    <div class="slot-column">
-        <div class="pass-title">Free Pass</div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
+        <!-- Item Slotları için düzen -->
+        <div style="display: flex; flex-wrap: wrap; width: 100%; margin-top: 20px;">
+            <!-- 16 item slotunu ekleyelim -->
+            <div style="width: 50%; text-align: center;">
+                <h3>Free Pass</h3>
+                <!-- Free Pass item slotları -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+                    <!-- İlk sıradaki 8 item slotu -->
+                    <img src="itemslot_1.png" alt="Free Item 1">
+                    <img src="itemslot_1.png" alt="Free Item 2">
+                    <img src="itemslot_1.png" alt="Free Item 3">
+                    <img src="itemslot_1.png" alt="Free Item 4">
+                    <img src="itemslot_1.png" alt="Free Item 5">
+                    <img src="itemslot_1.png" alt="Free Item 6">
+                    <img src="itemslot_1.png" alt="Free Item 7">
+                    <img src="itemslot_1.png" alt="Free Item 8">
+                </div>
+            </div>
+
+            <div style="width: 50%; text-align: center;">
+                <h3>Royal Pass</h3>
+                <!-- Royal Pass item slotları -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+                    <!-- İkinci sıradaki 8 item slotu -->
+                    <img src="itemslot_1.png" alt="Royal Item 1">
+                    <img src="itemslot_1.png" alt="Royal Item 2">
+                    <img src="itemslot_1.png" alt="Royal Item 3">
+                    <img src="itemslot_1.png" alt="Royal Item 4">
+                    <img src="itemslot_1.png" alt="Royal Item 5">
+                    <img src="itemslot_1.png" alt="Royal Item 6">
+                    <img src="itemslot_1.png" alt="Royal Item 7">
+                    <img src="itemslot_1.png" alt="Royal Item 8">
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Premium Pass -->
-    <div class="slot-column">
-        <div class="pass-title">Premium Pass</div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-    </div>
-</div>
 
 </body>
 </html>
