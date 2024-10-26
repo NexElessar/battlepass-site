@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Royal Pass</title>
     <style>
-        /* Sayfa boyutu ve arka plan resmi */
+        /* Sayfa genel ayarları */
         html, body {
             width: 700px;
             height: 450px;
@@ -20,18 +20,144 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Başlık stili */
-        h2 {
+        /* Başlık ve menü */
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: #3a2e2a;
+            padding: 10px;
+            border-bottom: 2px solid #c8a165;
+            border-radius: 5px 5px 0 0;
             color: #ffd700;
-            text-align: left;
-            margin: 20px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .button {
+            padding: 5px 15px;
+            border-radius: 5px;
+            background-color: #6ac045;
+            color: #000;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* İlerleme çubuğu */
+        .progress-bar {
+            width: 90%;
+            height: 20px;
+            margin: 15px auto;
+            background-color: #555;
+            border-radius: 10px;
+        }
+
+        .progress {
+            width: 50%; /* Örnek ilerleme yüzdesi */
+            height: 100%;
+            background-color: #6ac045;
+            border-radius: 10px;
+            text-align: center;
+            color: #000;
+            font-size: 0.9em;
+        }
+
+        /* Kart düzeni */
+        .content {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .pass-section {
+            width: 40%;
+        }
+
+        .pass-section h3 {
+            text-align: center;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .reward-card {
+            background-color: #4c3b35;
+            border: 1px solid #c8a165;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #f0e6d2;
+        }
+
+        .reward-card img {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 5px;
+        }
+
+        .reward-card button {
+            background-color: #444;
+            color: #f0e6d2;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-<div>
-    <h2>Royal Pass</h2>
+<div class="container">
+    <!-- Başlık ve Menü -->
+    <div class="header">
+        <div class="button">Royal Pass</div>
+        <div class="button">Missions</div>
+    </div>
+
+    <!-- İlerleme Çubuğu -->
+    <div class="progress-bar">
+        <div class="progress">50/100</div>
+    </div>
+
+    <!-- Kart İçeriği -->
+    <div class="content">
+        <!-- Free Pass Bölümü -->
+        <div class="pass-section">
+            <h3>Free Pass</h3>
+            <div class="reward-card">
+                <img src="placeholder.png" alt="Reward 1">
+                <p>Reward 1</p>
+                <button>Claim</button>
+            </div>
+            <div class="reward-card">
+                <img src="placeholder.png" alt="Reward 2">
+                <p>Reward 2</p>
+                <button>Level is not enough</button>
+            </div>
+            <!-- Daha fazla ödül kartı eklenebilir -->
+        </div>
+
+        <!-- Elite Pass Bölümü -->
+        <div class="pass-section">
+            <h3>Elite Pass</h3>
+            <div class="reward-card">
+                <img src="placeholder.png" alt="Reward 1">
+                <p>Reward 1</p>
+                <button>Claim</button>
+            </div>
+            <div class="reward-card">
+                <img src="placeholder.png" alt="Reward 2">
+                <p>Reward 2</p>
+                <button>Level is not enough</button>
+            </div>
+            <!-- Daha fazla ödül kartı eklenebilir -->
+        </div>
+    </div>
 </div>
 
 </body>
