@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Royal Pass</title>
     <style>
-        /* Sayfa genel ayarları */
+        /* Sayfa ayarları */
         html, body {
             width: 700px;
             height: 450px;
@@ -14,150 +14,62 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('backround.png'); /* Arka plan dosyasının yolu */
+            background-image: url('com_bg_tile_b.dds'); /* Arka plan dosyasının yolu */
             background-size: cover;
             background-repeat: no-repeat;
             font-family: Arial, sans-serif;
         }
 
-        /* Başlık ve menü */
-        .header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Konteyner ayarları */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 52px); /* 4 sütun */
+            grid-template-rows: repeat(4, 52px); /* 4 satır */
             gap: 10px;
-            background-color: #3a2e2a;
-            padding: 10px;
-            border-bottom: 2px solid #c8a165;
-            border-radius: 5px 5px 0 0;
+            padding-top: 20px;
+        }
+
+        /* Slot stili */
+        .slot {
+            width: 52px;
+            height: 52px;
+            background-image: url('itemslot_1.png'); /* Slot görselinin yolu */
+            background-size: cover;
+        }
+
+        /* Başlık */
+        .title {
             color: #ffd700;
-        }
-
-        .header h2 {
-            margin: 0;
-            font-size: 1.2em;
-        }
-
-        .button {
-            padding: 5px 15px;
-            border-radius: 5px;
-            background-color: #6ac045;
-            color: #000;
-            cursor: pointer;
-            text-align: center;
             font-weight: bold;
-        }
-
-        /* İlerleme çubuğu */
-        .progress-bar {
-            width: 90%;
-            height: 20px;
-            margin: 15px auto;
-            background-color: #555;
-            border-radius: 10px;
-        }
-
-        .progress {
-            width: 50%; /* Örnek ilerleme yüzdesi */
-            height: 100%;
-            background-color: #6ac045;
-            border-radius: 10px;
-            text-align: center;
-            color: #000;
-            font-size: 0.9em;
-        }
-
-        /* Kart düzeni */
-        .content {
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        .pass-section {
-            width: 40%;
-        }
-
-        .pass-section h3 {
-            text-align: center;
-            color: #ffd700;
-            margin-bottom: 10px;
-        }
-
-        .reward-card {
-            background-color: #4c3b35;
-            border: 1px solid #c8a165;
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 10px;
-            text-align: center;
-            color: #f0e6d2;
-        }
-
-        .reward-card img {
-            width: 32px;
-            height: 32px;
-            margin-bottom: 5px;
-        }
-
-        .reward-card button {
-            background-color: #444;
-            color: #f0e6d2;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            text-align: left;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
 
+<div class="title">Royal Pass</div>
+
 <div class="container">
-    <!-- Başlık ve Menü -->
-    <div class="header">
-        <div class="button">Royal Pass</div>
-        <div class="button">Missions</div>
-    </div>
+    <!-- Free Pass slotları -->
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
 
-    <!-- İlerleme Çubuğu -->
-    <div class="progress-bar">
-        <div class="progress">50/100</div>
-    </div>
-
-    <!-- Kart İçeriği -->
-    <div class="content">
-        <!-- Free Pass Bölümü -->
-        <div class="pass-section">
-            <h3>Free Pass</h3>
-            <div class="reward-card">
-                <img src="placeholder.png" alt="Reward 1">
-                <p>Reward 1</p>
-                <button>Claim</button>
-            </div>
-            <div class="reward-card">
-                <img src="placeholder.png" alt="Reward 2">
-                <p>Reward 2</p>
-                <button>Level is not enough</button>
-            </div>
-            <!-- Daha fazla ödül kartı eklenebilir -->
-        </div>
-
-        <!-- Elite Pass Bölümü -->
-        <div class="pass-section">
-            <h3>Elite Pass</h3>
-            <div class="reward-card">
-                <img src="placeholder.png" alt="Reward 1">
-                <p>Reward 1</p>
-                <button>Claim</button>
-            </div>
-            <div class="reward-card">
-                <img src="placeholder.png" alt="Reward 2">
-                <p>Reward 2</p>
-                <button>Level is not enough</button>
-            </div>
-            <!-- Daha fazla ödül kartı eklenebilir -->
-        </div>
-    </div>
+    <!-- Premium Pass slotları -->
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
 </div>
 
 </body>
