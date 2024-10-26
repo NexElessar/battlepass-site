@@ -18,15 +18,32 @@
             background-size: cover;
             background-repeat: no-repeat;
             font-family: Arial, sans-serif;
+            color: #ffd700;
         }
 
-        /* Konteyner ayarları */
-        .container {
-            display: grid;
-            grid-template-columns: repeat(4, 52px); /* 4 sütun */
-            grid-template-rows: repeat(4, 52px); /* 4 satır */
+        /* Başlık */
+        .title {
+            font-weight: bold;
+            text-align: left;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Free ve Premium Pass slot konteynerleri */
+        .pass-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            top: 50px;
+        }
+
+        /* Slot satırları */
+        .slot-row {
+            display: flex;
             gap: 10px;
-            padding-top: 20px;
+            justify-content: center;
         }
 
         /* Slot stili */
@@ -37,12 +54,11 @@
             background-size: cover;
         }
 
-        /* Başlık */
-        .title {
-            color: #ffd700;
+        /* Başlık stili */
+        .pass-title {
+            text-align: center;
             font-weight: bold;
-            text-align: left;
-            margin-left: 10px;
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -50,26 +66,32 @@
 
 <div class="title">Royal Pass</div>
 
-<div class="container">
-    <!-- Free Pass slotları -->
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
+<div class="pass-container">
+    <!-- Free Pass -->
+    <div class="pass-title">Free Pass</div>
+    <div class="slot-row">
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+    </div>
 
-    <!-- Premium Pass slotları -->
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
+    <!-- Premium Pass -->
+    <div class="pass-title">Premium Pass</div>
+    <div class="slot-row">
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+    </div>
 </div>
 
 </body>
