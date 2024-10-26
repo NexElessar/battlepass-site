@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2b1f1d;
+    color: #f0e6d2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.battle-pass-container {
+    width: 800px;
+    background-color: #3a2e2a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    border: 2px solid #c8a165;
+}
+.battle-pass-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #d4b481;
+}
+.tabs {
+    display: flex;
+    gap: 20px;
+}
+.tab {
+    padding: 8px 16px;
+    background-color: #4c3b35;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #f0e6d2;
+}
+.tab.active {
+    background-color: #c8a165;
+    color: #2b1f1d;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.progress-bar {
+    background-color: #4c3b35;
+    border-radius: 6px;
+    margin: 20px 0;
+    position: relative;
+    border: 1px solid #c8a165;
+}
+.progress-bar-fill {
+    height: 24px;
+    background-color: #c8a165;
+    width: 0%;
+    border-radius: 6px;
+}
+.level-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2px;
+    color: #2b1f1d;
+    font-weight: bold;
+}
+.reward-section {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.reward-tier {
+    width: 48%;
+}
+.reward-item {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-color: #4c3b35;
+    border: 2px solid #c8a165;
+    border-radius: 8px;
+    margin: 5px;
+    text-align: center;
+    vertical-align: top;
+}
+.claim-button {
+    padding: 5px;
+    background-color: #c8a165;
+    color: #2b1f1d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 5px;
+}
+.claim-button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+.divider {
+    width: 1px;
+    background-color: #c8a165;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

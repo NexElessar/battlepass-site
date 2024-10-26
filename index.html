@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Battle Pass</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS dosyasını bağlama -->
+</head>
+<body>
+    <div class="battle-pass-container">
+        <div class="battle-pass-header">
+            <h2>Battle Pass</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('battle-pass')">Battle Pass</div>
+                <div class="tab" onclick="showTab('missions')">Missions</div>
+                <div class="tab" onclick="showTab('purchase')">Purchase</div>
+            </div>
+        </div>
+
+        <!-- Battle Pass Sekmesi -->
+        <div id="battle-pass" class="tab-content active">
+            <div class="level-progress">
+                <p>Overall Progress: <span style="color: #c8a165;" id="overall-progress-text">0 / 100</span></p>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="overall-progress-bar"></div>
+                    <span class="level-text" id="overall-level-text">0%</span>
+                </div>
+            </div>
+            <div class="reward-section">
+                <!-- Free Pass Ödülleri -->
+                <div class="reward-tier">
+                    <h3>Free Pass</h3>
+                    <div class="reward-item">
+                        <img src="free_reward_1.png" alt="Reward 1">
+                        <button class="claim-button" onclick="claimReward(this)">Claim</button>
+                    </div>
+                    <div class="reward-item">
+                        <img src="free_reward_2.png" alt="Reward 2">
+                        <button class="claim-button" onclick="claimReward(this)">Claim</button>
+                    </div>
+                    <div class="reward-item">
+                        <img src="free_reward_3.png" alt="Reward 3">
+                        <button class="claim-button" onclick="claimReward(this)">Claim</button>
+                    </div>
+                    <div class="reward-item">
+                        <img src="free_reward_4.png" alt="Reward 4">
+                        <button class="claim-button" onclick="claimReward(this)">Claim</button>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Elite Pass Ödülleri -->
+                <div class="reward-tier">
+                    <h3>Elite Pass</h3>
+                    <div class="reward-item">
+                        <img src="elite_reward_1.png" alt="Reward 1">
+                        <button class="claim-button" onclick="claimReward(this)">Claim</button>
+                    </div>
+                    <div class="reward-item">
+                        <img src="elite_reward_2.png" alt="Reward 2">
+                        <button class="claim-button" onclick="claimReward(this)">Claim</button>
+                    </div>
+                    <div class="reward-item">
+                        <img src="elite_reward_3.png" alt="Reward 3">
+                        <button class="claim-button" onclick="claimReward(this)">Claim</button>
+                    </div>
+                    <div class="reward-item">
+                        <img src="elite_reward_4.png" alt="Reward 4">
+                        <button class="claim-button" onclick="claimReward(this)">Claim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Missions Sekmesi -->
+        <div id="missions" class="tab-content">
+            <h3>Görevler</h3>
+            <p>Görev detayları burada yer alacak.</p>
+        </div>
+
+        <!-- Purchase Sekmesi -->
+        <div id="purchase" class="tab-content">
+            <h3>Purchase</h3>
+            <p>Bu bölümden Battle Pass satın alabilirsiniz.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- JavaScript dosyasını bağlama -->
+</body>
+</html>
