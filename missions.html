@@ -7,17 +7,17 @@
         html, body {
             width: 100vw;
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 0;
             padding: 0;
             overflow: hidden;
             background-color: #2b1f1d;
         }
-        .mission-container {
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 700px;
-            height: 450px;
+            height: 500px;
             background-color: #3a2e2a;
             border: 2px solid #c8a165;
             padding: 20px;
@@ -56,12 +56,13 @@
             border: none;
             border-radius: 5px;
             margin-top: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-<div class="mission-container">
+<div class="container">
     <h2 style="color: #ffd700;">Görevler</h2>
     
     <!-- Görev 1 -->
