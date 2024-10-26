@@ -26,16 +26,18 @@
             text-align: center;
             box-sizing: border-box;
         }
+        .pass-sections {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
         .pass-section {
             width: 45%;
-            display: inline-block;
-            vertical-align: top;
             background-color: #3a2e2a;
             border: 1px solid #c8a165;
             border-radius: 10px;
             padding: 10px;
             box-sizing: border-box;
-            margin: 0 5px;
             text-align: center;
         }
         .item {
@@ -89,75 +91,78 @@
         <div style="width: 30%; height: 100%; background-color: #6ac045; border-radius: 10px; text-align: center; color: #000;">Lv. 1 | 30%</div>
     </div>
 
-    <!-- Regular Pass Section -->
-    <div class="pass-section">
-        <h3 style="color: #ffd700;">Regular Pass</h3>
-        <!-- 6 item for Regular Pass -->
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 1<br>Quantity: 1x<br>
-            <button class="claimed-button">Claimed</button>
+    <!-- Pass Sections in Horizontal Alignment -->
+    <div class="pass-sections">
+        <!-- Regular Pass Section -->
+        <div class="pass-section">
+            <h3 style="color: #ffd700;">Regular Pass</h3>
+            <!-- 6 items for Regular Pass in two rows -->
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 1<br>Quantity: 1x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 2<br>Quantity: 2x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 3<br>Quantity: 3x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 4<br>Quantity: 1x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 5<br>Quantity: 2x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 6<br>Quantity: 3x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
         </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 2<br>Quantity: 2x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 3<br>Quantity: 3x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 4<br>Quantity: 1x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 5<br>Quantity: 2x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 6<br>Quantity: 3x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-    </div>
 
-    <!-- Premium Pass Section -->
-    <div class="pass-section">
-        <h3 style="color: #ffd700;">Premium Pass</h3>
-        <!-- 6 item for Premium Pass -->
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 1<br>Quantity: 1x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 2<br>Quantity: 2x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 3<br>Quantity: 3x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 4<br>Quantity: 1x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 5<br>Quantity: 2x<br>
-            <button class="claimed-button">Claimed</button>
-        </div>
-        <div class="item">
-            <img src="placeholder.png" alt="item"><br>
-            Lv. 6<br>Quantity: 3x<br>
-            <button class="claimed-button">Claimed</button>
+        <!-- Premium Pass Section -->
+        <div class="pass-section">
+            <h3 style="color: #ffd700;">Premium Pass</h3>
+            <!-- 6 items for Premium Pass in two rows -->
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 1<br>Quantity: 1x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 2<br>Quantity: 2x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 3<br>Quantity: 3x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 4<br>Quantity: 1x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 5<br>Quantity: 2x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
+            <div class="item">
+                <img src="placeholder.png" alt="item"><br>
+                Lv. 6<br>Quantity: 3x<br>
+                <button class="claimed-button">Claimed</button>
+            </div>
         </div>
     </div>
     
