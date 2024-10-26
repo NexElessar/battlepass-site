@@ -7,13 +7,24 @@
         html, body {
             width: 100vw;
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 0;
             padding: 0;
             overflow: hidden;
             background-color: #2b1f1d;
+        }
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 700px;
+            height: 500px;
+            background-color: #3a2e2a;
+            border: 2px solid #c8a165;
+            padding: 10px;
+            border-radius: 10px;
+            color: #f0e6d2;
+            text-align: center;
+            box-sizing: border-box;
         }
         .pass-section {
             width: 45%;
@@ -70,7 +81,7 @@
 </head>
 <body>
 
-<div style="width: 700px; height: 500px; background-color: #3a2e2a; border: 2px solid #c8a165; padding: 10px; border-radius: 10px; color: #f0e6d2; text-align: center; box-sizing: border-box;">
+<div class="container">
     <h2 style="margin-top: 0; color: #ffd700;">Royal Pass</h2>
     
     <!-- Progress Bar -->
