@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <title>Royal Pass</title>
     <style>
-        /* Ana sayfa ayarları */
+        /* Ana sayfa boyutu */
         html, body {
-            width: 700px;
-            height: 500px;
+            width: 650px;
+            height: 450px;
             margin: 0;
             padding: 0;
             overflow: hidden;
-            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: #2b1f1d;
+            font-family: Arial, sans-serif;
         }
-        /* Ana çerçeve */
+
+        /* İçerik kutusu */
         .container {
             width: 100%;
             height: 100%;
@@ -23,121 +27,21 @@
             padding: 20px;
             border-radius: 10px;
             color: #f0e6d2;
-            text-align: center;
             box-sizing: border-box;
         }
-        /* Sekme stili */
-        .tabs {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .tab {
-            background-color: #4c3b35;
-            padding: 10px 20px;
-            border-radius: 5px;
+
+        /* Başlık ve içerik düzeni */
+        h2 {
             color: #ffd700;
-            cursor: pointer;
-            width: 45%;
-            text-align: center;
-        }
-        .tab.active {
-            background-color: #6ac045;
-        }
-        /* İlerleme çubuğu */
-        .progress-bar {
-            background-color: #555;
-            width: 100%;
-            height: 20px;
-            border-radius: 10px;
-            margin: 10px 0;
-            position: relative;
-        }
-        .progress-fill {
-            width: 50%;
-            height: 100%;
-            background-color: #6ac045;
-            border-radius: 10px;
-            text-align: center;
-            color: #000;
-            line-height: 20px;
-        }
-        /* Ödül alanı */
-        .pass-section {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .pass-column {
-            width: 45%;
             text-align: left;
-        }
-        .reward {
-            background-color: #4c3b35;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #c8a165;
-            border-radius: 5px;
-            color: #f0e6d2;
-            text-align: center;
-        }
-        .reward img {
-            width: 32px;
-            height: 32px;
-            margin-bottom: 5px;
+            margin: 0 0 10px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Sekmeler -->
-    <div class="tabs">
-        <div class="tab active">Royal Pass</div>
-        <div class="tab">Missions</div>
-    </div>
-
-    <!-- İlerleme Çubuğu -->
-    <div class="progress-bar">
-        <div class="progress-fill">50/100</div>
-    </div>
-
-    <!-- Free Pass ve Elite Pass ödülleri -->
-    <div class="pass-section">
-        <!-- Free Pass Alanı -->
-        <div class="pass-column">
-            <h3 style="color: #ffd700;">Free Pass</h3>
-            <div class="reward">
-                <img src="placeholder.png" alt="Reward 1">
-                <p>Reward 1</p>
-            </div>
-            <div class="reward">
-                <img src="placeholder.png" alt="Reward 2">
-                <p>Reward 2</p>
-            </div>
-            <div class="reward">
-                <img src="placeholder.png" alt="Reward 3">
-                <p>Reward 3</p>
-            </div>
-        </div>
-
-        <!-- Elite Pass Alanı -->
-        <div class="pass-column">
-            <h3 style="color: #ffd700;">Elite Pass</h3>
-            <div class="reward">
-                <img src="placeholder.png" alt="Reward 1">
-                <p>Reward 1</p>
-            </div>
-            <div class="reward">
-                <img src="placeholder.png" alt="Reward 2">
-                <p>Reward 2</p>
-            </div>
-            <div class="reward">
-                <img src="placeholder.png" alt="Reward 3">
-                <p>Reward 3</p>
-            </div>
-        </div>
-    </div>
+    <h2>Royal Pass</h2>
 </div>
 
 </body>
