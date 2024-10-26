@@ -4,21 +4,73 @@
     <meta charset="UTF-8">
     <title>Royal Pass</title>
     <style>
-        /* Sayfanın tamamını 700x450 boyutunda ayarlıyoruz */
         html, body {
-            width: 700px;
-            height: 450px;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0;
             padding: 0;
             overflow: hidden;
-            font-family: Arial, sans-serif;
             background-color: #2b1f1d;
+        }
+        .pass-section {
+            width: 45%;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #3a2e2a;
+            border: 1px solid #c8a165;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 0 5px;
+            text-align: center;
+        }
+        .item {
+            background-color: #4c3b35;
+            border: 1px solid #c8a165;
+            border-radius: 10px;
+            width: 80px;
+            height: 100px;
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+            margin: 5px;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+        .item img {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #c8a165;
+            margin-bottom: 3px;
+        }
+        .claimed-button {
+            background-color: #6ac045;
+            color: #000;
+            padding: 5px 10px;
+            font-size: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .mission-button {
+            background-color: #ffd700;
+            color: #3a2e2a;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
-<div style="width: 100%; height: 100%; background-color: #3a2e2a; border: 2px solid #c8a165; padding: 20px; border-radius: 10px; color: #f0e6d2; text-align: center; box-sizing: border-box;">
+<div style="width: 700px; height: 500px; background-color: #3a2e2a; border: 2px solid #c8a165; padding: 10px; border-radius: 10px; color: #f0e6d2; text-align: center; box-sizing: border-box;">
     <h2 style="margin-top: 0; color: #ffd700;">Royal Pass</h2>
     
     <!-- Progress Bar -->
@@ -27,60 +79,79 @@
     </div>
 
     <!-- Regular Pass Section -->
-    <h3 style="color: #ffd700;">Regular Pass</h3>
-    <table style="width: 100%; margin-bottom: 20px;">
-        <tr>
-            <td style="width: 25%; text-align: center; padding: 10px;">
-                <div style="background-color: #4c3b35; border: 1px solid #c8a165; padding: 10px; border-radius: 10px;">
-                    <p style="font-weight: bold; margin: 0;">Lv. 1</p>
-                    <p>Speed Scroll %100<br>Quantity: 1x</p>
-                    <button style="background-color: #444; color: #f0e6d2; padding: 5px 10px; border: none; border-radius: 5px;">Claimed</button>
-                </div>
-            </td>
-            <td style="width: 25%; text-align: center; padding: 10px;">
-                <div style="background-color: #4c3b35; border: 1px solid #c8a165; padding: 10px; border-radius: 10px;">
-                    <p style="font-weight: bold; margin: 0;">Lv. 2</p>
-                    <p>Hit Scroll %100<br>Quantity: 2x</p>
-                    <button style="background-color: #888; color: #fff; padding: 5px 10px; border: none; border-radius: 5px;">Level is not enough</button>
-                </div>
-            </td>
-            <td style="width: 25%; text-align: center; padding: 10px;">
-                <div style="background-color: #4c3b35; border: 1px solid #c8a165; padding: 10px; border-radius: 10px;">
-                    <p style="font-weight: bold; margin: 0;">Lv. 3</p>
-                    <p>Dodging Scroll %100<br>Quantity: 3x</p>
-                    <button style="background-color: #888; color: #fff; padding: 5px 10px; border: none; border-radius: 5px;">Level is not enough</button>
-                </div>
-            </td>
-        </tr>
-    </table>
+    <div class="pass-section">
+        <h3 style="color: #ffd700;">Regular Pass</h3>
+        <!-- 6 item for Regular Pass -->
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 1<br>Quantity: 1x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 2<br>Quantity: 2x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 3<br>Quantity: 3x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 4<br>Quantity: 1x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 5<br>Quantity: 2x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 6<br>Quantity: 3x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+    </div>
 
     <!-- Premium Pass Section -->
-    <h3 style="color: #ffd700;">Premium Pass</h3>
-    <table style="width: 100%;">
-        <tr>
-            <td style="width: 25%; text-align: center; padding: 10px;">
-                <div style="background-color: #4c3b35; border: 1px solid #c8a165; padding: 10px; border-radius: 10px;">
-                    <p style="font-weight: bold; margin: 0;">Lv. 1</p>
-                    <p>Speed Scroll %100<br>Quantity: 1x</p>
-                    <button style="background-color: #444; color: #f0e6d2; padding: 5px 10px; border: none; border-radius: 5px;">Claimed</button>
-                </div>
-            </td>
-            <td style="width: 25%; text-align: center; padding: 10px;">
-                <div style="background-color: #4c3b35; border: 1px solid #c8a165; padding: 10px; border-radius: 10px;">
-                    <p style="font-weight: bold; margin: 0;">Lv. 2</p>
-                    <p>Hit Scroll %100<br>Quantity: 2x</p>
-                    <button style="background-color: #888; color: #fff; padding: 5px 10px; border: none; border-radius: 5px;">Level is not enough</button>
-                </div>
-            </td>
-            <td style="width: 25%; text-align: center; padding: 10px;">
-                <div style="background-color: #4c3b35; border: 1px solid #c8a165; padding: 10px; border-radius: 10px;">
-                    <p style="font-weight: bold; margin: 0;">Lv. 3</p>
-                    <p>Dodging Scroll %100<br>Quantity: 3x</p>
-                    <button style="background-color: #888; color: #fff; padding: 5px 10px; border: none; border-radius: 5px;">Level is not enough</button>
-                </div>
-            </td>
-        </tr>
-    </table>
+    <div class="pass-section">
+        <h3 style="color: #ffd700;">Premium Pass</h3>
+        <!-- 6 item for Premium Pass -->
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 1<br>Quantity: 1x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 2<br>Quantity: 2x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 3<br>Quantity: 3x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 4<br>Quantity: 1x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 5<br>Quantity: 2x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+        <div class="item">
+            <img src="placeholder.png" alt="item"><br>
+            Lv. 6<br>Quantity: 3x<br>
+            <button class="claimed-button">Claimed</button>
+        </div>
+    </div>
+    
+    <!-- Görevler Sayfasına Gitme Linki -->
+    <a href="missions.html" class="mission-button">Görevler</a>
 </div>
 
 </body>
