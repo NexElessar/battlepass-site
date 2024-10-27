@@ -24,12 +24,31 @@
             position: relative;
         }
 
+        /* Kare çerçeveler */
+        .frame {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #333;
+            position: absolute;
+        }
+
+        /* Tik işareti */
+        .tick {
+            width: 20px;
+            height: 20px;
+            background: url('tik.png') no-repeat center center;
+            background-size: contain;
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
         /* Claim butonları */
         .pt-button {
             width: 44px;
             height: 20px;
             background: url('pt_button.png') no-repeat center center;
-            position: absolute;
             cursor: pointer;
             color: #fff;
             font-size: 10px;
@@ -37,22 +56,18 @@
             line-height: 20px;
             font-family: Arial, sans-serif;
             text-shadow: 1px 1px 2px black;
-        }
-
-        /* Tik işareti - başlangıçta görünmez, Claim'e tıklayınca CSS üzerinden görünecek */
-        .tick {
-            width: 20px;
-            height: 20px;
-            background: url('tik.png') no-repeat center center;
-            background-size: contain;
             position: absolute;
-            display: none; /* Başlangıçta gizli */
+            top: 65px;
+            left: 8px;
         }
 
-        /* Butonlar tıklanınca aktif olacak CSS sınıfı */
-        .pt-button.active .tick {
-            display: block;
-        }
+        /* Buton ve tik yerleşimi */
+        .frame-1 { top: 30px; left: 20px; }
+        .frame-2 { top: 30px; left: 130px; }
+        .frame-3 { top: 30px; left: 240px; }
+        .frame-4 { top: 150px; left: 20px; }
+        .frame-5 { top: 150px; left: 130px; }
+        .frame-6 { top: 150px; left: 240px; }
 
         /* Büyük buton */
         .bg-button {
@@ -71,46 +86,28 @@
             font-family: Arial, sans-serif;
             text-shadow: 1px 1px 2px black;
         }
-
-        /* Buton yerleşimi */
-        .pt-button-1 { top: 132px; left: 68px; }
-        .pt-button-2 { top: 132px; left: 148px; }
-        .pt-button-3 { top: 132px; left: 231px; }
-        .pt-button-4 { top: 274px; left: 68px; }
-        .pt-button-5 { top: 274px; left: 148px; }
-        .pt-button-6 { top: 274px; left: 231px; }
-        
-        /* CSS ile hover ve aktif durumunu taklit etmek için renk değişiklikleri */
-        .pt-button:hover {
-            background: url('pt_button_focus.png') no-repeat center center;
-        }
-
-        .pt-button:active {
-            background: url('pt_button_press.png') no-repeat center center;
-        }
-
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Küçük kare altındaki butonlar -->
-        <div class="pt-button pt-button-1" onclick="document.getElementById('tick1').style.display='block'">Claim
-            <div id="tick1" class="tick" style="right: -20px; top: 0;"></div>
+        <!-- Kare çerçeveler ve tik işaretleri -->
+        <div class="frame frame-1" onclick="document.getElementById('tick1').style.display='block'">
+            <div id="tick1" class="tick"></div>
         </div>
-        <div class="pt-button pt-button-2" onclick="document.getElementById('tick2').style.display='block'">Claim
-            <div id="tick2" class="tick" style="right: -20px; top: 0;"></div>
+        <div class="frame frame-2" onclick="document.getElementById('tick2').style.display='block'">
+            <div id="tick2" class="tick"></div>
         </div>
-        <div class="pt-button pt-button-3" onclick="document.getElementById('tick3').style.display='block'">Claim
-            <div id="tick3" class="tick" style="right: -20px; top: 0;"></div>
+        <div class="frame frame-3" onclick="document.getElementById('tick3').style.display='block'">
+            <div id="tick3" class="tick"></div>
         </div>
-        <div class="pt-button pt-button-4" onclick="document.getElementById('tick4').style.display='block'">Claim
-            <div id="tick4" class="tick" style="right: -20px; top: 0;"></div>
+        <div class="frame frame-4" onclick="document.getElementById('tick4').style.display='block'">
+            <div id="tick4" class="tick"></div>
         </div>
-        <div class="pt-button pt-button-5" onclick="document.getElementById('tick5').style.display='block'">Claim
-            <div id="tick5" class="tick" style="right: -20px; top: 0;"></div>
+        <div class="frame frame-5" onclick="document.getElementById('tick5').style.display='block'">
+            <div id="tick5" class="tick"></div>
         </div>
-        <div class="pt-button pt-button-6" onclick="document.getElementById('tick6').style.display='block'">Claim
-            <div id="tick6" class="tick" style="right: -20px; top: 0;"></div>
+        <div class="frame frame-6" onclick="document.getElementById('tick6').style.display='block'">
+            <div id="tick6" class="tick"></div>
         </div>
 
         <!-- En alt dikdörtgen butonu -->
