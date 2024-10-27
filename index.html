@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tasarım</title>
+    <title>E7 Uyumlu Tasarım</title>
     <style>
         /* Sayfa genel ayarları */
         html, body {
@@ -11,9 +11,6 @@
             font-family: Arial, sans-serif;
             color: #ffd700;
             overflow: hidden;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
             height: 100vh;
             width: 100vw;
         }
@@ -42,24 +39,18 @@
             text-shadow: 1px 1px 2px black;
         }
 
-        /* Tik işareti stili */
+        /* Tik işareti - başlangıçta görünmez, Claim'e tıklayınca CSS üzerinden görünecek */
         .tick {
             width: 20px;
             height: 20px;
             background: url('tik.png') no-repeat center center;
             background-size: contain;
-            display: none;
             position: absolute;
-            right: -30px;
-            top: -3px;
+            display: none; /* Başlangıçta gizli */
         }
 
-        /* Tik işareti göstermek için :checked kullanımı */
-        .pt-button input[type="checkbox"] {
-            display: none;
-        }
-        
-        .pt-button input[type="checkbox"]:checked + .tick {
+        /* Butonlar tıklanınca aktif olacak CSS sınıfı */
+        .pt-button.active .tick {
             display: block;
         }
 
@@ -70,7 +61,7 @@
             background: url('bg_botton.png') no-repeat center center;
             position: absolute;
             bottom: 10px;
-            left: 108px;
+            left: 50%;
             transform: translateX(-50%);
             cursor: pointer;
             color: #fff;
@@ -88,44 +79,49 @@
         .pt-button-4 { top: 274px; left: 68px; }
         .pt-button-5 { top: 274px; left: 148px; }
         .pt-button-6 { top: 274px; left: 231px; }
+        
+        /* CSS ile hover ve aktif durumunu taklit etmek için renk değişiklikleri */
+        .pt-button:hover {
+            background: url('pt_button_focus.png') no-repeat center center;
+        }
+
+        .pt-button:active {
+            background: url('pt_button_press.png') no-repeat center center;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Küçük kare altındaki butonlar -->
-        <label class="pt-button pt-button-1">
-            <input type="checkbox">
-            Claim
-            <div class="tick"></div>
-        </label>
-        <label class="pt-button pt-button-2">
-            <input type="checkbox">
-            Claim
-            <div class="tick"></div>
-        </label>
-        <label class="pt-button pt-button-3">
-            <input type="checkbox">
-            Claim
-            <div class="tick"></div>
-        </label>
-        <label class="pt-button pt-button-4">
-            <input type="checkbox">
-            Claim
-            <div class="tick"></div>
-        </label>
-        <label class="pt-button pt-button-5">
-            <input type="checkbox">
-            Claim
-            <div class="tick"></div>
-        </label>
-        <label class="pt-button pt-button-6">
-            <input type="checkbox">
-            Claim
-            <div class="tick"></div>
-        </label>
+        <div class="pt-button pt-button-1" onclick="document.getElementById('tick1').style.display='block'">Claim
+            <div id="tick1" class="tick" style="right: -20px; top: 0;"></div>
+        </div>
+        <div class="pt-button pt-button-2" onclick="document.getElementById('tick2').style.display='block'">Claim
+            <div id="tick2" class="tick" style="right: -20px; top: 0;"></div>
+        </div>
+        <div class="pt-button pt-button-3" onclick="document.getElementById('tick3').style.display='block'">Claim
+            <div id="tick3" class="tick" style="right: -20px; top: 0;"></div>
+        </div>
+        <div class="pt-button pt-button-4" onclick="document.getElementById('tick4').style.display='block'">Claim
+            <div id="tick4" class="tick" style="right: -20px; top: 0;"></div>
+        </div>
+        <div class="pt-button pt-button-5" onclick="document.getElementById('tick5').style.display='block'">Claim
+            <div id="tick5" class="tick" style="right: -20px; top: 0;"></div>
+        </div>
+        <div class="pt-button pt-button-6" onclick="document.getElementById('tick6').style.display='block'">Claim
+            <div id="tick6" class="tick" style="right: -20px; top: 0;"></div>
+        </div>
 
-        <!-- En alt dikdörtgen butonu (tik işareti ekleme özelliği olmadan) -->
-        <div class="bg-button">Claim</div>
+        <!-- En alt dikdörtgen butonu -->
+        <div class="bg-button" onclick="
+            document.getElementById('tick1').style.display='block';
+            document.getElementById('tick2').style.display='block';
+            document.getElementById('tick3').style.display='block';
+            document.getElementById('tick4').style.display='block';
+            document.getElementById('tick5').style.display='block';
+            document.getElementById('tick6').style.display='block';
+        ">Claim</div>
     </div>
 </body>
 </html>
