@@ -5,14 +5,17 @@
     <style>
         /* Sayfa genel ayarları */
         html, body {
-            width: 330px;
-            height: 365px; 
             margin: 0;
             padding: 0;
             background-color: #2b1f1d;
             font-family: Arial, sans-serif;
             color: #ffd700;
             overflow: hidden; /* Kaydırma çubuklarını gizler */
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100vh;
+            width: 100vw;
         }
 
         /* Ana kapsayıcı */
@@ -20,9 +23,8 @@
             width: 330px;
             height: 365px;
             background: url('backround.PNG') no-repeat center center;
-            position: absolute;
-            top: 0;
-            left: 0;
+            background-size: cover; /* Arka plan görseli tam sığsın */
+            position: relative;
         }
 
         /* Küçük karelerin altındaki butonlar */
@@ -67,4 +69,40 @@
         .pt-button-6 { top: 200px; left: 230px; }
     </style>
     <script type="text/javascript">
-        // Focus ve press efektleri için
+        // Focus ve press efektleri için JavaScript fonksiyonları
+        function buttonHover(element, state) {
+            if (state === 'focus') {
+                element.style.backgroundImage = "url('pt_button_focus.png')";
+            } else if (state === 'press') {
+                element.style.backgroundImage = "url('pt_button_press.png')";
+            } else {
+                element.style.backgroundImage = "url('pt_button.png')";
+            }
+        }
+
+        function bgButtonHover(element, state) {
+            if (state === 'focus') {
+                element.style.backgroundImage = "url('bg_button_focus.png')";
+            } else if (state === 'press') {
+                element.style.backgroundImage = "url('bg_button_press.png')";
+            } else {
+                element.style.backgroundImage = "url('bg_botton.png')";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Küçük kare altındaki butonlar -->
+        <div class="pt-button pt-button-1" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-2" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-3" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-4" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-5" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-6" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+
+        <!-- En alt dikdörtgen butonu -->
+        <div class="bg-button" onmouseover="bgButtonHover(this, 'focus')" onmousedown="bgButtonHover(this, 'press')" onmouseup="bgButtonHover(this, 'focus')" onmouseout="bgButtonHover(this, 'default')">Claim</div>
+    </div>
+</body>
+</html>
