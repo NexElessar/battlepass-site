@@ -40,6 +40,23 @@
             line-height: 20px;
             font-family: Arial, sans-serif;
             text-shadow: 1px 1px 2px black;
+            transition: background-image 0.2s ease;
+        }
+
+        /* Tıklanınca "Claimed" yazısı gösterme */
+        .pt-button.clicked::after {
+            content: "Claimed";
+            color: #4caf50;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
         }
 
         /* Hover ve basılı durumlar için CSS */
@@ -90,15 +107,15 @@
 <body>
     <div class="container">
         <!-- Küçük kare altındaki butonlar -->
-        <div class="pt-button pt-button-1">Claim</div>
-        <div class="pt-button pt-button-2">Claim</div>
-        <div class="pt-button pt-button-3">Claim</div>
-        <div class="pt-button pt-button-4">Claim</div>
-        <div class="pt-button pt-button-5">Claim</div>
-        <div class="pt-button pt-button-6">Claim</div>
+        <div class="pt-button pt-button-1" onclick="this.classList.add('clicked')">Claim</div>
+        <div class="pt-button pt-button-2" onclick="this.classList.add('clicked')">Claim</div>
+        <div class="pt-button pt-button-3" onclick="this.classList.add('clicked')">Claim</div>
+        <div class="pt-button pt-button-4" onclick="this.classList.add('clicked')">Claim</div>
+        <div class="pt-button pt-button-5" onclick="this.classList.add('clicked')">Claim</div>
+        <div class="pt-button pt-button-6" onclick="this.classList.add('clicked')">Claim</div>
 
         <!-- En alt dikdörtgen butonu -->
-        <div class="bg-button">Claim</div>
+        <div class="bg-button" onclick="document.querySelectorAll('.pt-button').forEach(btn => btn.classList.add('clicked'))">Claim</div>
     </div>
 </body>
 </html>
