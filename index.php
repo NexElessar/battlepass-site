@@ -2,104 +2,56 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Battle Pass</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #2b1f1d;
-            color: #f0e6d2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            width: 700px;
-            background-color: #3a2e2a;
-            border: 2px solid #c8a165;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .title {
-            color: #ffd700;
-            font-size: 24px;
-        }
-        .progress-bar {
-            background-color: #555;
-            width: 100%;
-            height: 20px;
-            border-radius: 10px;
-            margin-top: 10px;
-            position: relative;
-        }
-        .progress {
-            width: 70%; /* Örneğin %70 ilerleme */
-            height: 100%;
-            background-color: #6ac045;
-            border-radius: 10px;
-            text-align: center;
-            color: #000;
-        }
-        .reward-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .reward-item {
-            background-color: #4c3b35;
-            border: 1px solid #c8a165;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .reward-item img {
-            width: 40px;
-            height: 40px;
-        }
-        .claim-btn {
-            background-color: #444;
-            color: #f0e6d2;
-            padding: 5px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Royal Pass</title>
 </head>
-<body>
+<body style="width: 700px; height: 450px; background-color: #2b1f1d; color: #ffd700; font-family: Arial, sans-serif; padding: 0; margin: 0; box-sizing: border-box;">
 
-<div class="container">
-    <h1 class="title">Battle Pass</h1>
-    <div class="progress-bar">
-        <div class="progress">70/100</div>
-    </div>
-    <div class="reward-grid">
-        <?php
-        // Ödülleri PHP ile dinamik olarak listeleyin
-        $rewards = [
-            ["name" => "Intelligence Scroll", "quantity" => 2, "status" => "claimed"],
-            ["name" => "Strength Scroll", "quantity" => 2, "status" => "claimed"],
-            ["name" => "MP Increase Scroll", "quantity" => 2, "status" => "not enough"],
-            ["name" => "HP Increase Scroll", "quantity" => 2, "status" => "not enough"],
-        ];
+    <!-- Başlık -->
+    <h2 style="text-align: left; padding-left: 20px; margin-top: 20px;">Royal Pass</h2>
 
-        foreach ($rewards as $reward) {
-            echo '<div class="reward-item">';
-            echo '<img src="reward_icon.png" alt="' . $reward['name'] . '">'; // Ödül simgesi
-            echo '<p>' . $reward['name'] . '</p>';
-            echo '<p>Quantity: ' . $reward['quantity'] . '</p>';
-            if ($reward['status'] === "claimed") {
-                echo '<button class="claim-btn" disabled>Claimed</button>';
-            } else {
-                echo '<button class="claim-btn">Claim</button>';
-            }
-            echo '</div>';
-        }
-        ?>
+    <!-- İlerleme Çubuğu -->
+    <div style="width: 660px; height: 30px; background-color: #555; border-radius: 15px; margin: 20px auto;">
+        <div style="width: 50%; height: 100%; background-color: #6ac045; border-radius: 15px; text-align: center; line-height: 30px; color: #000;">
+            50 / 100
+        </div>
     </div>
-</div>
+
+    <!-- Ödül Slotları -->
+    <div style="display: flex; justify-content: space-around; margin-top: 30px;">
+        <!-- Sol Kolon - Free Pass -->
+        <div>
+            <h3 style="text-align: center; color: #ffd700;">Free Pass</h3>
+            <div style="width: 300px;">
+                <div style="display: flex; justify-content: space-between; padding: 10px;">
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 1</div>
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 2</div>
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 3</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 10px;">
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 4</div>
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 5</div>
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 6</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sağ Kolon - Elite Pass -->
+        <div>
+            <h3 style="text-align: center; color: #ffd700;">Elite Pass</h3>
+            <div style="width: 300px;">
+                <div style="display: flex; justify-content: space-between; padding: 10px;">
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 1</div>
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 2</div>
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 3</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 10px;">
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 4</div>
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 5</div>
+                    <div style="width: 52px; height: 52px; background-color: #444; border: 1px solid #888; text-align: center; line-height: 52px; color: #0ff;">Slot 6</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
