@@ -24,12 +24,11 @@
             position: relative;
         }
 
-        /* Küçük karelerin altındaki butonlar */
+        /* Claim butonları */
         .pt-button {
             width: 44px;
             height: 20px;
             background: url('pt_button.png') no-repeat center center;
-            position: absolute;
             cursor: pointer;
             color: #fff;
             font-size: 10px;
@@ -37,6 +36,7 @@
             line-height: 20px;
             font-family: Arial, sans-serif;
             text-shadow: 1px 1px 2px black;
+            position: absolute;
         }
 
         /* Tik işareti */
@@ -46,7 +46,23 @@
             background: url('tik.png') no-repeat center center;
             background-size: contain;
             position: absolute;
-            display: none; /* Başlangıçta gizli */
+            top: -30px; /* Butonun üstünde görünecek şekilde */
+            left: 10px;
+            display: none;
+        }
+
+        /* Tik işaretlerini göstermek için checked durumu */
+        .pt-checkbox:checked + .pt-button .tick {
+            display: block;
+        }
+
+        /* Hover ve Active Durumları */
+        .pt-button:hover {
+            background-image: url('pt_button_focus.png');
+        }
+
+        .pt-button:active {
+            background-image: url('pt_button_press.png');
         }
 
         /* Buton ve tik yerleşimi */
@@ -56,14 +72,6 @@
         .pt-button-4 { top: 274px; left: 68px; }
         .pt-button-5 { top: 274px; left: 148px; }
         .pt-button-6 { top: 274px; left: 231px; }
-
-        /* Tik işaretleri için konum */
-        .tick-1 { top: 112px; left: 48px; }
-        .tick-2 { top: 112px; left: 128px; }
-        .tick-3 { top: 112px; left: 211px; }
-        .tick-4 { top: 254px; left: 48px; }
-        .tick-5 { top: 254px; left: 128px; }
-        .tick-6 { top: 254px; left: 211px; }
 
         /* Büyük buton */
         .bg-button {
@@ -82,38 +90,53 @@
             text-shadow: 1px 1px 2px black;
         }
     </style>
-    <script type="text/javascript">
-        function showTick(tickId) {
-            document.getElementById(tickId).style.display = 'block';
-        }
-
-        function showAllTicks() {
-            for (let i = 1; i <= 6; i++) {
-                document.getElementById('tick' + i).style.display = 'block';
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
-        <!-- Tik işaretleri -->
-        <div id="tick1" class="tick tick-1"></div>
-        <div id="tick2" class="tick tick-2"></div>
-        <div id="tick3" class="tick tick-3"></div>
-        <div id="tick4" class="tick tick-4"></div>
-        <div id="tick5" class="tick tick-5"></div>
-        <div id="tick6" class="tick tick-6"></div>
+        <!-- Küçük kare altındaki butonlar ve tik işaretleri -->
+        <label>
+            <input type="checkbox" class="pt-checkbox">
+            <div class="pt-button pt-button-1">Claim
+                <div class="tick"></div>
+            </div>
+        </label>
+        <label>
+            <input type="checkbox" class="pt-checkbox">
+            <div class="pt-button pt-button-2">Claim
+                <div class="tick"></div>
+            </div>
+        </label>
+        <label>
+            <input type="checkbox" class="pt-checkbox">
+            <div class="pt-button pt-button-3">Claim
+                <div class="tick"></div>
+            </div>
+        </label>
+        <label>
+            <input type="checkbox" class="pt-checkbox">
+            <div class="pt-button pt-button-4">Claim
+                <div class="tick"></div>
+            </div>
+        </label>
+        <label>
+            <input type="checkbox" class="pt-checkbox">
+            <div class="pt-button pt-button-5">Claim
+                <div class="tick"></div>
+            </div>
+        </label>
+        <label>
+            <input type="checkbox" class="pt-checkbox">
+            <div class="pt-button pt-button-6">Claim
+                <div class="tick"></div>
+            </div>
+        </label>
 
-        <!-- Küçük kare altındaki butonlar -->
-        <div class="pt-button pt-button-1" onclick="showTick('tick1')">Claim</div>
-        <div class="pt-button pt-button-2" onclick="showTick('tick2')">Claim</div>
-        <div class="pt-button pt-button-3" onclick="showTick('tick3')">Claim</div>
-        <div class="pt-button pt-button-4" onclick="showTick('tick4')">Claim</div>
-        <div class="pt-button pt-button-5" onclick="showTick('tick5')">Claim</div>
-        <div class="pt-button pt-button-6" onclick="showTick('tick6')">Claim</div>
-
-        <!-- En alt dikdörtgen butonu -->
-        <div class="bg-button" onclick="showAllTicks()">Claim</div>
+        <!-- En alt dikdörtgen butonu (Tiklerin tümünü göstermek için) -->
+        <label class="bg-button">
+            <input type="checkbox" class="pt-checkbox" onclick="
+                document.querySelectorAll('.pt-checkbox').forEach(cb => cb.checked = true);
+            "> Claim
+        </label>
     </div>
 </body>
 </html>
