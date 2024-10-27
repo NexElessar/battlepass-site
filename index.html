@@ -80,74 +80,35 @@
         .pt-button-5 { top: 274px; left: 148px; }
         .pt-button-6 { top: 274px; left: 231px; }
     </style>
-    <script type="text/javascript">
-        // Focus ve press efektleri için JavaScript fonksiyonları
-        function buttonHover(element, state) {
-            if (state === 'focus') {
-                element.style.backgroundImage = "url('pt_button_focus.png')";
-            } else if (state === 'press') {
-                element.style.backgroundImage = "url('pt_button_press.png')";
-            } else {
-                element.style.backgroundImage = "url('pt_button.png')";
-            }
-        }
-
-        function bgButtonHover(element, state) {
-            if (state === 'focus') {
-                element.style.backgroundImage = "url('bg_button_focus.png')";
-            } else if (state === 'press') {
-                element.style.backgroundImage = "url('bg_button_press.png')";
-            } else {
-                element.style.backgroundImage = "url('bg_botton.png')";
-            }
-        }
-
-        // Tik işaretini gösterme fonksiyonu
-        function showTick(button) {
-            const tick = button.querySelector('.tick');
-            if (tick) tick.style.display = 'block';
-        }
-
-        // Büyük Claim butonuna tıklanınca tüm tikleri gösterme fonksiyonu
-        function showAllTicks() {
-            document.querySelectorAll('.pt-button .tick').forEach(tick => {
-                tick.style.display = 'block';
-            });
-        }
-    </script>
 </head>
 <body>
     <div class="container">
         <!-- Küçük kare altındaki butonlar -->
-        <div class="pt-button pt-button-1" onclick="showTick(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">
-            Claim
-            <div class="tick"></div>
-        </div>
-        <div class="pt-button pt-button-2" onclick="showTick(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">
-            Claim
-            <div class="tick"></div>
-        </div>
-        <div class="pt-button pt-button-3" onclick="showTick(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">
-            Claim
-            <div class="tick"></div>
-        </div>
-        <div class="pt-button pt-button-4" onclick="showTick(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">
-            Claim
-            <div class="tick"></div>
-        </div>
-        <div class="pt-button pt-button-5" onclick="showTick(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">
-            Claim
-            <div class="tick"></div>
-        </div>
-        <div class="pt-button pt-button-6" onclick="showTick(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">
-            Claim
-            <div class="tick"></div>
-        </div>
+        <div class="pt-button pt-button-1" onclick="showTick(this)">Claim<div class="tick"></div></div>
+        <div class="pt-button pt-button-2" onclick="showTick(this)">Claim<div class="tick"></div></div>
+        <div class="pt-button pt-button-3" onclick="showTick(this)">Claim<div class="tick"></div></div>
+        <div class="pt-button pt-button-4" onclick="showTick(this)">Claim<div class="tick"></div></div>
+        <div class="pt-button pt-button-5" onclick="showTick(this)">Claim<div class="tick"></div></div>
+        <div class="pt-button pt-button-6" onclick="showTick(this)">Claim<div class="tick"></div></div>
 
         <!-- En alt dikdörtgen butonu -->
-        <div class="bg-button" onclick="showAllTicks()" onmouseover="bgButtonHover(this, 'focus')" onmousedown="bgButtonHover(this, 'press')" onmouseup="bgButtonHover(this, 'focus')" onmouseout="bgButtonHover(this, 'default')">
-            Claim
-        </div>
+        <div class="bg-button" onclick="showAllTicks()">Claim</div>
     </div>
+
+    <script type="text/javascript">
+        function showTick(button) {
+            var tick = button.getElementsByClassName('tick')[0];
+            if (tick) {
+                tick.style.display = 'block';
+            }
+        }
+
+        function showAllTicks() {
+            var ticks = document.getElementsByClassName('tick');
+            for (var i = 0; i < ticks.length; i++) {
+                ticks[i].style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
