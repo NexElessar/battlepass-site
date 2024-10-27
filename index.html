@@ -27,6 +27,11 @@
             position: relative;
         }
 
+        /* Buton tarzında görünmesi için checkbox gizleme */
+        .pt-checkbox {
+            display: none;
+        }
+
         /* Küçük karelerin altındaki butonlar */
         .pt-button {
             width: 44px;
@@ -43,8 +48,8 @@
             font-weight: bold;
         }
 
-        /* Tıklanınca "Claimed" yazısı gösterme */
-        .pt-button:active::after {
+        /* Butona tıklandığında (checkbox işaretlendiğinde) "Claimed" yazısını gösterme */
+        .pt-checkbox:checked + .pt-button::after {
             content: "Claimed";
             color: #4caf50;
             font-weight: bold;
@@ -59,42 +64,6 @@
             background: rgba(0, 0, 0, 0.5);
         }
 
-        /* Hover ve basılı durumlar için CSS */
-        .pt-button:hover {
-            background-image: url('pt_button_focus.png');
-        }
-
-        .pt-button:active {
-            background-image: url('pt_button_press.png');
-        }
-
-        /* En alt dikdörtgendeki büyük buton */
-        .bg-button {
-            width: 111px;
-            height: 28px;
-            background: url('bg_botton.png') no-repeat center center;
-            position: absolute;
-            bottom: 10px;
-            left: 108px;
-            transform: translateX(-50%);
-            cursor: pointer;
-            color: #fff;
-            font-size: 12px;
-            text-align: center;
-            line-height: 28px;
-            font-family: Arial, sans-serif;
-            text-shadow: 1px 1px 2px black;
-        }
-
-        /* Büyük butonun hover ve basılı durumları */
-        .bg-button:hover {
-            background-image: url('bg_button_focus.png');
-        }
-
-        .bg-button:active {
-            background-image: url('bg_button_press.png');
-        }
-
         /* Buton yerleşimi */
         .pt-button-1 { top: 132px; left: 68px; }
         .pt-button-2 { top: 132px; left: 148px; }
@@ -107,15 +76,23 @@
 <body>
     <div class="container">
         <!-- Küçük kare altındaki butonlar -->
-        <div class="pt-button pt-button-1">Claim</div>
-        <div class="pt-button pt-button-2">Claim</div>
-        <div class="pt-button pt-button-3">Claim</div>
-        <div class="pt-button pt-button-4">Claim</div>
-        <div class="pt-button pt-button-5">Claim</div>
-        <div class="pt-button pt-button-6">Claim</div>
+        <input type="checkbox" id="claim1" class="pt-checkbox">
+        <label for="claim1" class="pt-button pt-button-1">Claim</label>
 
-        <!-- En alt dikdörtgen butonu -->
-        <div class="bg-button">Claim</div>
+        <input type="checkbox" id="claim2" class="pt-checkbox">
+        <label for="claim2" class="pt-button pt-button-2">Claim</label>
+
+        <input type="checkbox" id="claim3" class="pt-checkbox">
+        <label for="claim3" class="pt-button pt-button-3">Claim</label>
+
+        <input type="checkbox" id="claim4" class="pt-checkbox">
+        <label for="claim4" class="pt-button pt-button-4">Claim</label>
+
+        <input type="checkbox" id="claim5" class="pt-checkbox">
+        <label for="claim5" class="pt-button pt-button-5">Claim</label>
+
+        <input type="checkbox" id="claim6" class="pt-checkbox">
+        <label for="claim6" class="pt-button pt-button-6">Claim</label>
     </div>
 </body>
 </html>
