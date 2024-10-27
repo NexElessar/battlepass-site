@@ -1,48 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <title>Royal Pass</title>
-    <style type="text/css">
-        /* Sayfa genel ayarları */
+    <style>
+        /* Sayfa ayarları */
         html, body {
             width: 700px;
             height: 450px;
             margin: 0;
             padding: 0;
-            background-color: #2b1f1d;
+            overflow: hidden;
             font-family: Arial, sans-serif;
-            color: #ffd700;
-            overflow: hidden; /* Kaydırma çubuklarını gizler */
+            background-color: #2b1f1d;
         }
 
-        /* Ana çerçeve */
-        .container {
-            width: 100%;
-            height: 100%;
-            background-image: url('backround.png');
-            background-size: cover;
+        /* Ana başlık için stil */
+        .header {
             text-align: center;
-            padding-top: 20px;
-            box-sizing: border-box;
-            overflow: hidden; /* İçerideki kaydırma çubuklarını da gizler */
-        }
-
-        /* Başlık */
-        .title {
-            text-align: left;
-            font-size: 24px;
-            padding-left: 10px;
+            color: #ffd700;
             font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 2px solid #ffd700;
+            display: inline-block;
+            border-radius: 10px;
         }
 
-        /* Seviye çubuğu */
+        /* Alt başlıklar için stil */
+        .sub-header {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Royal Level ve Royal Points Bilgisi */
+        .info-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* İlerleme çubuğu */
         .progress-bar {
+            background-color: #555;
             width: 80%;
             height: 20px;
-            background-color: #555;
             border-radius: 10px;
             margin: 10px auto;
+            overflow: hidden;
             position: relative;
         }
 
@@ -50,66 +62,89 @@
             width: 50%;
             height: 100%;
             background-color: #6ac045;
-            color: #000;
+            border-radius: 10px;
             text-align: center;
             line-height: 20px;
-            font-size: 12px;
+            color: #000;
+            font-weight: bold;
         }
 
-        /* Slot düzeni (tablo yöntemi) */
-        .item-table {
-            width: 80%;
-            margin: 10px auto;
-            border-spacing: 10px;
-        }
-
-        .item-slot {
-            width: 52px;
-            height: 52px;
-            background-color: #4c4c4c;
-            border: 1px solid #c8a165;
-            color: #ffd700;
-            font-size: 10px;
-            line-height: 52px;
+        /* Çerçeveli içerik alanı */
+        .container {
+            width: 100%;
+            height: 100%;
+            background-image: url('backround.png');
+            background-size: cover;
+            border: 2px solid #c8a165;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            color: #f0e6d2;
             text-align: center;
+        }
+
+        /* Item kutuları */
+        .item-box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffd700;
+            font-size: 14px;
+            text-align: center;
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Claim butonları */
+        .claim-button {
+            margin-top: 10px;
+            background-color: #444;
+            color: #f0e6d2;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Başlık -->
-    <div class="title">Royal Pass</div>
+    <!-- Ana başlık -->
+    <div class="header">Elessar Season</div>
+    
+    <!-- Alt başlık -->
+    <div class="sub-header">Royal Pass</div>
 
-    <!-- Seviye Çubuğu -->
+    <!-- Royal Level ve Royal Points Bilgisi -->
+    <div class="info-section">
+        <div>Royal Level: 1</div>
+        <div>Royal Points: 0</div>
+    </div>
+
+    <!-- İlerleme Çubuğu -->
     <div class="progress-bar">
         <div class="progress">50/100</div>
     </div>
 
-    <!-- Slotlar (Ödüller) -->
-    <table class="item-table">
-        <tr>
-            <td class="item-slot">Item 1</td>
-            <td class="item-slot">Item 2</td>
-            <td class="item-slot">Item 3</td>
-            <td class="item-slot">Item 4</td>
-            <td class="item-slot">Item 5</td>
-            <td class="item-slot">Item 6</td>
-            <td class="item-slot">Item 7</td>
-            <td class="item-slot">Item 8</td>
-        </tr>
-        <tr>
-            <td class="item-slot">Item 9</td>
-            <td class="item-slot">Item 10</td>
-            <td class="item-slot">Item 11</td>
-            <td class="item-slot">Item 12</td>
-            <td class="item-slot">Item 13</td>
-            <td class="item-slot">Item 14</td>
-            <td class="item-slot">Item 15</td>
-            <td class="item-slot">Item 16</td>
-        </tr>
-    </table>
-
+    <!-- Item Kutuları -->
+    <div style="text-align: center; margin-top: 20px;">
+        <div class="item-box">Item 1 <br> <button class="claim-button">Claim</button></div>
+        <div class="item-box">Item 2 <br> <button class="claim-button">Claim</button></div>
+        <div class="item-box">Item 3 <br> <button class="claim-button">Claim</button></div>
+        <div class="item-box">Item 4 <br> <button class="claim-button">Claim</button></div>
+        <div class="item-box">Item 5 <br> <button class="claim-button">Claim</button></div>
+        <div class="item-box">Item 6 <br> <button class="claim-button">Claim</button></div>
+        <div class="item-box">Item 7 <br> <button class="claim-button">Claim</button></div>
+        <div class="item-box">Item 8 <br> <button class="claim-button">Claim</button></div>
+        <div class="item-box">Item 9 <br> <button class="claim-button">Claim</button></div>
+        <div class="item-box">Item 10 <br> <button class="claim-button">Claim</button></div>
+    </div>
 </div>
 
 </body>
