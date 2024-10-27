@@ -8,6 +8,7 @@
             width: 330px;
             height: 365px;
             background: url('backround.PNG') no-repeat center center;
+            overflow: hidden; /* Kaydırma çubuğunu kaldırmak için */
             position: relative;
         }
 
@@ -17,9 +18,16 @@
             height: 20px;
             background: url('pt_button.png') no-repeat center center;
             position: absolute;
+            cursor: pointer;
+        }
+        .pt-button:hover {
+            background: url('pt_button_focus.png') no-repeat center center;
+        }
+        .pt-button:active {
+            background: url('pt_button_press.png') no-repeat center center;
         }
 
-        /* En alt dikdörtgendeki buton */
+        /* En alt dikdörtgendeki büyük buton */
         .bg-button {
             width: 111px;
             height: 28px;
@@ -28,6 +36,13 @@
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
+            cursor: pointer;
+        }
+        .bg-button:hover {
+            background: url('bg_button_focus.png') no-repeat center center;
+        }
+        .bg-button:active {
+            background: url('bg_button_press.png') no-repeat center center;
         }
 
         /* Buton yerleşimi */
