@@ -1,98 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ödül Alındı</title>
+    <title>Tasarım</title>
     <style>
-        /* Genel stil */
+        /* Sayfa genel ayarları */
         html, body {
             margin: 0;
             padding: 0;
             background-color: #2b1f1d;
             font-family: Arial, sans-serif;
             color: #ffd700;
+            overflow: hidden;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+            justify-content: flex-start;
             height: 100vh;
+            width: 100vw;
         }
 
-        /* Ödül butonları */
-        .reward-container {
+        /* Ana kapsayıcı */
+        .container {
             width: 330px;
             height: 365px;
-            background-color: #3a3a3a;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .reward-button {
-            width: 63px;
-            height: 70px;
-            background-color: #555;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            cursor: pointer;
+            background: url('backround.PNG') no-repeat center center;
+            background-size: cover;
             position: relative;
-            font-weight: bold;
-            text-align: center;
         }
 
-        /* Claimed yazısı */
-        .claimed-text {
-            display: none;
+        /* Küçük karelerin altındaki butonlar */
+        .pt-button {
+            width: 44px;
+            height: 20px;
+            background: url('pt_button.png') no-repeat center center;
             position: absolute;
+            cursor: pointer;
+            color: #fff;
+            font-size: 10px;
+            text-align: center;
+            line-height: 20px;
+            font-family: Arial, sans-serif;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        /* En alt dikdörtgendeki büyük buton */
+        .bg-button {
+            width: 111px;
+            height: 28px;
+            background: url('bg_botton.png') no-repeat center center;
+            position: absolute;
+            bottom: 10px;
+            left: 108px;
+            transform: translateX(-50%);
+            cursor: pointer;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 28px;
+            font-family: Arial, sans-serif;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        /* Claimed yazısının stili */
+        .claimed {
             color: #4caf50;
-            font-size: 16px;
             font-weight: bold;
-            text-transform: uppercase;
         }
 
-        /* Butona tıklanınca claimed yazısını göster */
-        .reward-button.clicked .claimed-text {
-            display: block;
-        }
-
-        /* Al yazısını gizle */
-        .reward-button.clicked .claim-button-text {
-            display: none;
-        }
+        /* Buton yerleşimi */
+        .pt-button-1 { top: 132px; left: 68px; }
+        .pt-button-2 { top: 132px; left: 148px; }
+        .pt-button-3 { top: 132px; left: 231px; }
+        .pt-button-4 { top: 274px; left: 68px; }
+        .pt-button-5 { top: 274px; left: 148px; }
+        .pt-button-6 { top: 274px; left: 231px; }
     </style>
+    <script type="text/javascript">
+        // Buttona tıklandığında "Claimed" yazısını göster
+        function markAsClaimed(button) {
+            button.innerHTML = "<span class='claimed'>Claimed</span>";
+        }
+
+        // Büyük butona tıklandığında tüm küçük butonları "Claimed" olarak işaretle
+        function claimAll() {
+            var buttons = document.getElementsByClassName('pt-button');
+            for (var i = 0; i < buttons.length; i++) {
+                markAsClaimed(buttons[i]);
+            }
+        }
+    </script>
 </head>
 <body>
+    <div class="container">
+        <!-- Küçük kare altındaki butonlar -->
+        <div class="pt-button pt-button-1" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-2" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-3" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-4" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-5" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-6" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
 
-    <div class="reward-container">
-        <!-- Butonlar -->
-        <div class="reward-button" onclick="this.classList.toggle('clicked')">
-            <span class="claim-button-text">Al</span>
-            <span class="claimed-text">Claimed</span>
-        </div>
-        <div class="reward-button" onclick="this.classList.toggle('clicked')">
-            <span class="claim-button-text">Al</span>
-            <span class="claimed-text">Claimed</span>
-        </div>
-        <div class="reward-button" onclick="this.classList.toggle('clicked')">
-            <span class="claim-button-text">Al</span>
-            <span class="claimed-text">Claimed</span>
-        </div>
-        <div class="reward-button" onclick="this.classList.toggle('clicked')">
-            <span class="claim-button-text">Al</span>
-            <span class="claimed-text">Claimed</span>
-        </div>
-        <div class="reward-button" onclick="this.classList.toggle('clicked')">
-            <span class="claim-button-text">Al</span>
-            <span class="claimed-text">Claimed</span>
-        </div>
-        <div class="reward-button" onclick="this.classList.toggle('clicked')">
-            <span class="claim-button-text">Al</span>
-            <span class="claimed-text">Claimed</span>
-        </div>
+        <!-- En alt dikdörtgen butonu (Tümünü claim etmek için) -->
+        <div class="bg-button" onclick="claimAll()" onmouseover="bgButtonHover(this, 'focus')" onmousedown="bgButtonHover(this, 'press')" onmouseup="bgButtonHover(this, 'focus')" onmouseout="bgButtonHover(this, 'default')">Claim</div>
     </div>
-
 </body>
 </html>
