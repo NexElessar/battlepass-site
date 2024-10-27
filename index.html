@@ -1,48 +1,115 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Royal Pass</title>
+    <style type="text/css">
+        /* Sayfa genel ayarları */
+        body {
+            width: 700px;
+            height: 450px;
+            margin: 0;
+            padding: 0;
+            background-color: #2b1f1d;
+            font-family: Arial, sans-serif;
+            color: #ffd700;
+            overflow: hidden;
+        }
+
+        /* Ana çerçeve */
+        .container {
+            width: 100%;
+            height: 100%;
+            background-image: url('backround.png');
+            background-size: cover;
+            text-align: center;
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Başlık */
+        .title {
+            text-align: left;
+            font-size: 24px;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+
+        /* Seviye çubuğu */
+        .progress-bar {
+            width: 80%;
+            height: 20px;
+            background-color: #555;
+            border-radius: 10px;
+            margin: 10px auto;
+            position: relative;
+        }
+
+        .progress {
+            width: 50%;
+            height: 100%;
+            background-color: #6ac045;
+            color: #000;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        /* Slot düzeni (tablo yöntemi) */
+        .item-table {
+            width: 80%;
+            margin: 10px auto;
+            border-spacing: 10px;
+        }
+
+        .item-slot {
+            width: 52px;
+            height: 52px;
+            background-color: #4c4c4c;
+            border: 1px solid #c8a165;
+            color: #ffd700;
+            font-size: 10px;
+            line-height: 52px;
+            text-align: center;
+        }
+    </style>
 </head>
-<body style="width: 700px; height: 450px; margin: 0; padding: 0; background-image: url('backround.png'); font-family: Arial, sans-serif; color: #ffd700; background-size: cover; background-repeat: no-repeat;">
+<body>
 
-    <!-- Başlık Alanı -->
-    <div style="padding: 10px; text-align: left; font-size: 24px; font-weight: bold;">
-        Royal Pass
+<div class="container">
+    <!-- Başlık -->
+    <div class="title">Royal Pass</div>
+
+    <!-- Seviye Çubuğu -->
+    <div class="progress-bar">
+        <div class="progress">50/100</div>
     </div>
 
-    <!-- İçerik Alanı -->
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 85%; padding: 20px;">
+    <!-- Slotlar (Ödüller) -->
+    <table class="item-table">
+        <tr>
+            <td class="item-slot">Item 1</td>
+            <td class="item-slot">Item 2</td>
+            <td class="item-slot">Item 3</td>
+            <td class="item-slot">Item 4</td>
+            <td class="item-slot">Item 5</td>
+            <td class="item-slot">Item 6</td>
+            <td class="item-slot">Item 7</td>
+            <td class="item-slot">Item 8</td>
+        </tr>
+        <tr>
+            <td class="item-slot">Item 9</td>
+            <td class="item-slot">Item 10</td>
+            <td class="item-slot">Item 11</td>
+            <td class="item-slot">Item 12</td>
+            <td class="item-slot">Item 13</td>
+            <td class="item-slot">Item 14</td>
+            <td class="item-slot">Item 15</td>
+            <td class="item-slot">Item 16</td>
+        </tr>
+    </table>
 
-        <!-- Seviye Çubuğu -->
-        <div style="width: 90%; background-color: #555; border-radius: 10px; height: 20px;">
-            <div style="width: 50%; background-color: #6ac045; height: 100%; border-radius: 10px; text-align: center; color: #000;">
-                50/100
-            </div>
-        </div>
-
-        <!-- Slotlar (Ödüller) -->
-        <div style="display: grid; grid-template-columns: repeat(8, 52px); grid-gap: 10px; justify-content: center; margin-top: 20px;">
-            <!-- 16 adet slot örneği -->
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 1</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 2</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 3</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 4</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 5</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 6</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 7</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 8</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 9</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 10</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 11</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 12</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 13</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 14</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 15</div>
-            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 16</div>
-        </div>
-
-    </div>
+</div>
 
 </body>
 </html>
