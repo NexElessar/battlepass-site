@@ -1,127 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Royal Pass</title>
-    <style type="text/css">
-        /* Sayfa genel ayarları */
-        html, body {
-            width: 700px;
-            height: 450px;
-            margin: 0;
-            padding: 0;
-            background-color: #2b1f1d;
-            font-family: Arial, sans-serif;
-            color: #ffd700;
-            overflow: hidden; /* Kaydırma çubuklarını gizler */
-        }
-
-        /* Ana çerçeve */
+    <title>Tasarım</title>
+    <style>
+        /* Ana kapsayıcı */
         .container {
-            width: 100%;
-            height: 100%;
-            background-image: url('backround.png');
-            background-size: cover;
-            text-align: center;
-            padding-top: 20px;
-            box-sizing: border-box;
-            overflow: hidden; /* İçerideki kaydırma çubuklarını da gizler */
-        }
-
-        /* Başlık */
-        .title {
-            text-align: left;
-            font-size: 24px;
-            padding-left: 10px;
-            font-weight: bold;
-            border-bottom: 2px solid #c8a165;
-            padding-bottom: 5px;
-        }
-
-        /* Seviye çubuğu */
-        .progress-bar {
-            width: 80%;
-            height: 20px;
-            background-color: #555;
-            border-radius: 10px;
-            margin: 10px auto;
+            width: 365px;
+            height: 330px;
+            background: url('backround.PNG') no-repeat center center;
             position: relative;
         }
 
-        .progress {
-            width: 50%;
-            height: 100%;
-            background-color: #6ac045;
-            color: #000;
-            text-align: center;
-            line-height: 20px;
-            font-size: 12px;
-            border-radius: 10px;
+        /* Küçük karelerin altındaki butonlar */
+        .pt-button {
+            width: 28px;
+            height: 14px;
+            background: url('pt_button.png') no-repeat center center;
+            position: absolute;
         }
 
-        /* Slot düzeni (tablo yöntemi) */
-        .item-table {
-            width: 80%;
-            margin: 10px auto;
-            border-spacing: 10px;
+        /* En alt dikdörtgendeki buton */
+        .bg-button {
+            width: 44px;
+            height: 20px;
+            background: url('bg_botton.png') no-repeat center center;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        .item-slot {
-            width: 52px;
-            height: 52px;
-            background-color: #4c4c4c;
-            border: 1px solid #c8a165;
-            color: #ffd700;
-            font-size: 10px;
-            line-height: 52px;
-            text-align: center;
-            border-radius: 5px;
-        }
-
-        /* Slot hover efekti */
-        .item-slot:hover {
-            background-color: #6ac045;
-            color: #000;
-            cursor: pointer;
-        }
+        /* Buton yerleşimi */
+        .pt-button-1 { top: 90px; left: 70px; }
+        .pt-button-2 { top: 90px; left: 150px; }
+        .pt-button-3 { top: 90px; left: 230px; }
+        .pt-button-4 { top: 200px; left: 70px; }
+        .pt-button-5 { top: 200px; left: 150px; }
+        .pt-button-6 { top: 200px; left: 230px; }
     </style>
 </head>
 <body>
+    <div class="container">
+        <!-- Küçük kare altındaki butonlar -->
+        <div class="pt-button pt-button-1"></div>
+        <div class="pt-button pt-button-2"></div>
+        <div class="pt-button pt-button-3"></div>
+        <div class="pt-button pt-button-4"></div>
+        <div class="pt-button pt-button-5"></div>
+        <div class="pt-button pt-button-6"></div>
 
-<div class="container">
-    <!-- Başlık -->
-    <div class="title">Royal Pass</div>
-
-    <!-- Seviye Çubuğu -->
-    <div class="progress-bar">
-        <div class="progress">50/100</div>
+        <!-- En alt dikdörtgen butonu -->
+        <div class="bg-button"></div>
     </div>
-
-    <!-- Slotlar (Ödüller) -->
-    <table class="item-table">
-        <tr>
-            <td class="item-slot">Item 1</td>
-            <td class="item-slot">Item 2</td>
-            <td class="item-slot">Item 3</td>
-            <td class="item-slot">Item 4</td>
-            <td class="item-slot">Item 5</td>
-            <td class="item-slot">Item 6</td>
-            <td class="item-slot">Item 7</td>
-            <td class="item-slot">Item 8</td>
-        </tr>
-        <tr>
-            <td class="item-slot">Item 9</td>
-            <td class="item-slot">Item 10</td>
-            <td class="item-slot">Item 11</td>
-            <td class="item-slot">Item 12</td>
-            <td class="item-slot">Item 13</td>
-            <td class="item-slot">Item 14</td>
-            <td class="item-slot">Item 15</td>
-            <td class="item-slot">Item 16</td>
-        </tr>
-    </table>
-
-</div>
-
 </body>
 </html>
