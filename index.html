@@ -60,21 +60,32 @@
             text-shadow: 1px 1px 2px black;
         }
 
-        /* Tik işareti */
+        /* Hover ve Active Durumları */
+        .pt-button:hover {
+            background-image: url('pt_button_focus.png');
+        }
+
+        .pt-button:active {
+            background-image: url('pt_button_press.png');
+        }
+
+        /* Büyük buton Hover ve Active Durumları */
+        .bg-button:hover {
+            background-image: url('bg_button_focus.png');
+        }
+
+        .bg-button:active {
+            background-image: url('bg_button_press.png');
+        }
+
+        /* Tik işareti (statik olarak ekleniyor) */
         .tick {
             width: 20px;
             height: 20px;
             background: url('tik.png') no-repeat center center;
             background-size: contain;
             position: absolute;
-            top: -20px; /* Butonun üst kısmında */
-            left: 12px;
-            display: none; /* Başlangıçta gizli */
-        }
-
-        /* Checkbox işaretlendiğinde tik işaretini göster */
-        .pt-checkbox:checked + .pt-button .tick {
-            display: block;
+            display: none;
         }
 
         /* Buton yerleşimi */
@@ -84,54 +95,55 @@
         .pt-button-4 { top: 274px; left: 68px; }
         .pt-button-5 { top: 274px; left: 148px; }
         .pt-button-6 { top: 274px; left: 231px; }
+
+        /* Tik işaretlerinin konumları */
+        .tick-1 { top: 112px; left: 78px; }
+        .tick-2 { top: 112px; left: 158px; }
+        .tick-3 { top: 112px; left: 241px; }
+        .tick-4 { top: 254px; left: 78px; }
+        .tick-5 { top: 254px; left: 158px; }
+        .tick-6 { top: 254px; left: 241px; }
     </style>
+    <script type="text/javascript">
+        function toggleTick(tickId) {
+            var tick = document.getElementById(tickId);
+            if (tick.style.display === "none") {
+                tick.style.display = "block";
+            } else {
+                tick.style.display = "none";
+            }
+        }
+
+        function showAllTicks() {
+            for (var i = 1; i <= 6; i++) {
+                document.getElementById('tick' + i).style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <!-- Küçük kare altındaki butonlar ve tik işaretleri -->
-        <label>
-            <input type="checkbox" class="pt-checkbox" style="display: none;">
-            <div class="pt-button pt-button-1">Claim
-                <div class="tick"></div>
-            </div>
-        </label>
-        <label>
-            <input type="checkbox" class="pt-checkbox" style="display: none;">
-            <div class="pt-button pt-button-2">Claim
-                <div class="tick"></div>
-            </div>
-        </label>
-        <label>
-            <input type="checkbox" class="pt-checkbox" style="display: none;">
-            <div class="pt-button pt-button-3">Claim
-                <div class="tick"></div>
-            </div>
-        </label>
-        <label>
-            <input type="checkbox" class="pt-checkbox" style="display: none;">
-            <div class="pt-button pt-button-4">Claim
-                <div class="tick"></div>
-            </div>
-        </label>
-        <label>
-            <input type="checkbox" class="pt-checkbox" style="display: none;">
-            <div class="pt-button pt-button-5">Claim
-                <div class="tick"></div>
-            </div>
-        </label>
-        <label>
-            <input type="checkbox" class="pt-checkbox" style="display: none;">
-            <div class="pt-button pt-button-6">Claim
-                <div class="tick"></div>
-            </div>
-        </label>
+        <div class="pt-button pt-button-1" onclick="toggleTick('tick1')">Claim</div>
+        <div class="tick tick-1" id="tick1"></div>
+
+        <div class="pt-button pt-button-2" onclick="toggleTick('tick2')">Claim</div>
+        <div class="tick tick-2" id="tick2"></div>
+
+        <div class="pt-button pt-button-3" onclick="toggleTick('tick3')">Claim</div>
+        <div class="tick tick-3" id="tick3"></div>
+
+        <div class="pt-button pt-button-4" onclick="toggleTick('tick4')">Claim</div>
+        <div class="tick tick-4" id="tick4"></div>
+
+        <div class="pt-button pt-button-5" onclick="toggleTick('tick5')">Claim</div>
+        <div class="tick tick-5" id="tick5"></div>
+
+        <div class="pt-button pt-button-6" onclick="toggleTick('tick6')">Claim</div>
+        <div class="tick tick-6" id="tick6"></div>
 
         <!-- En alt dikdörtgen butonu (Tüm tik işaretlerini göstermek için) -->
-        <label class="bg-button">
-            <input type="checkbox" onclick="
-                document.querySelectorAll('.pt-checkbox').forEach(cb => cb.checked = true);
-            " style="display: none;"> Claim
-        </label>
+        <div class="bg-button" onclick="showAllTicks()">Claim</div>
     </div>
 </body>
 </html>
