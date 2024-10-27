@@ -10,7 +10,10 @@
             background-color: #2b1f1d;
             font-family: Arial, sans-serif;
             color: #ffd700;
-            overflow: hidden;
+            overflow: hidden; /* Kaydırma çubuklarını gizler */
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
             height: 100vh;
             width: 100vw;
         }
@@ -20,15 +23,16 @@
             width: 330px;
             height: 365px;
             background: url('backround.PNG') no-repeat center center;
-            background-size: cover;
+            background-size: cover; /* Arka plan görseli tam sığsın */
             position: relative;
         }
 
-        /* Claim butonları */
+        /* Küçük karelerin altındaki butonlar */
         .pt-button {
             width: 44px;
             height: 20px;
             background: url('pt_button.png') no-repeat center center;
+            position: absolute;
             cursor: pointer;
             color: #fff;
             font-size: 10px;
@@ -36,7 +40,24 @@
             line-height: 20px;
             font-family: Arial, sans-serif;
             text-shadow: 1px 1px 2px black;
+        }
+
+        /* En alt dikdörtgendeki büyük buton */
+        .bg-button {
+            width: 111px;
+            height: 28px;
+            background: url('bg_botton.png') no-repeat center center;
             position: absolute;
+            bottom: 10px;
+            left: 108px;
+            transform: translateX(-50%);
+            cursor: pointer;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 28px;
+            font-family: Arial, sans-serif;
+            text-shadow: 1px 1px 2px black;
         }
 
         /* Tik işareti */
@@ -46,96 +67,70 @@
             background: url('tik.png') no-repeat center center;
             background-size: contain;
             position: absolute;
-            top: -30px; /* Butonun üstünde görünecek şekilde */
-            left: 10px;
-            display: none;
+            top: -20px; /* Butonun üst kısmında */
+            left: 12px;
+            display: none; /* Başlangıçta gizli */
         }
 
-        /* Tik işaretlerini göstermek için checked durumu */
+        /* Checkbox işaretlendiğinde tik işaretini göster */
         .pt-checkbox:checked + .pt-button .tick {
             display: block;
         }
 
-        /* Hover ve Active Durumları */
-        .pt-button:hover {
-            background-image: url('pt_button_focus.png');
-        }
-
-        .pt-button:active {
-            background-image: url('pt_button_press.png');
-        }
-
-        /* Buton ve tik yerleşimi */
+        /* Buton yerleşimi */
         .pt-button-1 { top: 132px; left: 68px; }
         .pt-button-2 { top: 132px; left: 148px; }
         .pt-button-3 { top: 132px; left: 231px; }
         .pt-button-4 { top: 274px; left: 68px; }
         .pt-button-5 { top: 274px; left: 148px; }
         .pt-button-6 { top: 274px; left: 231px; }
-
-        /* Büyük buton */
-        .bg-button {
-            width: 111px;
-            height: 28px;
-            background: url('bg_botton.png') no-repeat center center;
-            position: absolute;
-            bottom: 10px;
-            left: 108px;
-            cursor: pointer;
-            color: #fff;
-            font-size: 12px;
-            text-align: center;
-            line-height: 28px;
-            font-family: Arial, sans-serif;
-            text-shadow: 1px 1px 2px black;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Küçük kare altındaki butonlar ve tik işaretleri -->
         <label>
-            <input type="checkbox" class="pt-checkbox">
+            <input type="checkbox" class="pt-checkbox" style="display: none;">
             <div class="pt-button pt-button-1">Claim
                 <div class="tick"></div>
             </div>
         </label>
         <label>
-            <input type="checkbox" class="pt-checkbox">
+            <input type="checkbox" class="pt-checkbox" style="display: none;">
             <div class="pt-button pt-button-2">Claim
                 <div class="tick"></div>
             </div>
         </label>
         <label>
-            <input type="checkbox" class="pt-checkbox">
+            <input type="checkbox" class="pt-checkbox" style="display: none;">
             <div class="pt-button pt-button-3">Claim
                 <div class="tick"></div>
             </div>
         </label>
         <label>
-            <input type="checkbox" class="pt-checkbox">
+            <input type="checkbox" class="pt-checkbox" style="display: none;">
             <div class="pt-button pt-button-4">Claim
                 <div class="tick"></div>
             </div>
         </label>
         <label>
-            <input type="checkbox" class="pt-checkbox">
+            <input type="checkbox" class="pt-checkbox" style="display: none;">
             <div class="pt-button pt-button-5">Claim
                 <div class="tick"></div>
             </div>
         </label>
         <label>
-            <input type="checkbox" class="pt-checkbox">
+            <input type="checkbox" class="pt-checkbox" style="display: none;">
             <div class="pt-button pt-button-6">Claim
                 <div class="tick"></div>
             </div>
         </label>
 
-        <!-- En alt dikdörtgen butonu (Tiklerin tümünü göstermek için) -->
+        <!-- En alt dikdörtgen butonu (Tüm tik işaretlerini göstermek için) -->
         <label class="bg-button">
-            <input type="checkbox" class="pt-checkbox" onclick="
+            <input type="checkbox" onclick="
                 document.querySelectorAll('.pt-checkbox').forEach(cb => cb.checked = true);
-            "> Claim
+            " style="display: none;"> Claim
         </label>
     </div>
 </body>
