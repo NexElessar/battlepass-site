@@ -42,6 +42,15 @@
             text-shadow: 1px 1px 2px black;
         }
 
+        /* Hover ve basılı durumlar için CSS */
+        .pt-button:hover {
+            background-image: url('pt_button_focus.png');
+        }
+
+        .pt-button:active {
+            background-image: url('pt_button_press.png');
+        }
+
         /* En alt dikdörtgendeki büyük buton */
         .bg-button {
             width: 111px;
@@ -60,10 +69,13 @@
             text-shadow: 1px 1px 2px black;
         }
 
-        /* Claimed yazısının stili */
-        .claimed {
-            color: #4caf50;
-            font-weight: bold;
+        /* Büyük butonun hover ve basılı durumları */
+        .bg-button:hover {
+            background-image: url('bg_button_focus.png');
+        }
+
+        .bg-button:active {
+            background-image: url('bg_button_press.png');
         }
 
         /* Buton yerleşimi */
@@ -74,33 +86,19 @@
         .pt-button-5 { top: 274px; left: 148px; }
         .pt-button-6 { top: 274px; left: 231px; }
     </style>
-    <script type="text/javascript">
-        // Buttona tıklandığında "Claimed" yazısını göster
-        function markAsClaimed(button) {
-            button.innerHTML = "<span class='claimed'>Claimed</span>";
-        }
-
-        // Büyük butona tıklandığında tüm küçük butonları "Claimed" olarak işaretle
-        function claimAll() {
-            var buttons = document.getElementsByClassName('pt-button');
-            for (var i = 0; i < buttons.length; i++) {
-                markAsClaimed(buttons[i]);
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
         <!-- Küçük kare altındaki butonlar -->
-        <div class="pt-button pt-button-1" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-2" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-3" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-4" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-5" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-6" onclick="markAsClaimed(this)" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
+        <div class="pt-button pt-button-1">Claim</div>
+        <div class="pt-button pt-button-2">Claim</div>
+        <div class="pt-button pt-button-3">Claim</div>
+        <div class="pt-button pt-button-4">Claim</div>
+        <div class="pt-button pt-button-5">Claim</div>
+        <div class="pt-button pt-button-6">Claim</div>
 
-        <!-- En alt dikdörtgen butonu (Tümünü claim etmek için) -->
-        <div class="bg-button" onclick="claimAll()" onmouseover="bgButtonHover(this, 'focus')" onmousedown="bgButtonHover(this, 'press')" onmouseup="bgButtonHover(this, 'focus')" onmouseout="bgButtonHover(this, 'default')">Claim</div>
+        <!-- En alt dikdörtgen butonu -->
+        <div class="bg-button">Claim</div>
     </div>
 </body>
 </html>
