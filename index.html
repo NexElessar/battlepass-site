@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Royal Pass</title>
 </head>
-<body style="width: 700px; height: 450px; margin: 0; padding: 0; background-image: url('backround.png'); font-family: Arial, sans-serif; color: #ffd700;">
+<body style="width: 700px; height: 450px; margin: 0; padding: 0; background-image: url('backround.png'); font-family: Arial, sans-serif; color: #ffd700; background-size: cover; background-repeat: no-repeat;">
 
     <!-- Başlık Alanı -->
     <div style="padding: 10px; text-align: left; font-size: 24px; font-weight: bold;">
@@ -15,22 +15,31 @@
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 85%; padding: 20px;">
 
         <!-- Seviye Çubuğu -->
-        <div style="width: 100%; background-color: #555; border-radius: 10px; height: 20px;">
+        <div style="width: 90%; background-color: #555; border-radius: 10px; height: 20px;">
             <div style="width: 50%; background-color: #6ac045; height: 100%; border-radius: 10px; text-align: center; color: #000;">
                 50/100
             </div>
         </div>
 
         <!-- Slotlar (Ödüller) -->
-        <div style="display: flex; justify-content: space-around; width: 100%; margin-top: 20px;">
-            <div style="width: 100%; display: flex; justify-content: space-evenly; flex-wrap: wrap; gap: 10px;">
-                <!-- 8 Free Pass ve 8 Premium Pass slotu için item kutuları -->
-                <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 1</div>
-                <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 2</div>
-                <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 3</div>
-                <!-- Devamını bu şekilde düzenleyin -->
-                <!-- ... 16 Item slotları burada... -->
-            </div>
+        <div style="display: grid; grid-template-columns: repeat(8, 52px); grid-gap: 10px; justify-content: center; margin-top: 20px;">
+            <!-- 16 adet slot örneği -->
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 1</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 2</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 3</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 4</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 5</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 6</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 7</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 8</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 9</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 10</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 11</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 12</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 13</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 14</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 15</div>
+            <div style="width: 52px; height: 52px; border: 1px solid #c8a165; background-color: #4c4c4c; display: flex; align-items: center; justify-content: center;">Item 16</div>
         </div>
 
     </div>
