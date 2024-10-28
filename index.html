@@ -33,21 +33,18 @@
             position: absolute;
             top: 10px;
             left: 13px;
-            width: 295px;
-            height: 12px;
+            width: 312px;
+            height: 18px;
             background: url('progress.png') no-repeat center center;
             border-radius: 5px;
             overflow: hidden;
         }
 
-        /* Progress çubuğu */
+        /* Progress çubuğu içi */
         .progress-bar {
             height: 100%;
             width: 0;
-            background: linear-gradient(to right, #8b4513, #ff8c00);
-            text-align: center;
-            line-height: 12px;
-            color: white;
+            background-color: #ff8c00;
         }
 
         /* Küçük karelerin altındaki butonlar */
@@ -116,26 +113,31 @@
             var totalButtons = 6; // Toplam küçük buton sayısı
             var claimedCount = 0; // Tıklanan buton sayısı
 
-            // Küçük butonlar için Claim ve Progress güncellemesi
+            // Küçük butonlar için press efekti ve Claim
             $('.pt-button').on('mousedown', function() {
                 var button = $(this);
 
                 // Eğer zaten "Claimed" ise işlem yapma
                 if (button.text() === 'Claimed') return;
 
-                // Butonu 'Claimed' yap
-                button.text('Claimed').css('color', '#4caf50');
-                claimedCount++; // Tıklanan buton sayısını artır
+                // Press efekti ekle
+                button.css('background-image', "url('pt_button_press.png')");
 
-                // Progress çubuğunu güncelle
-                updateProgressBar();
+                setTimeout(function() {
+                    button.css('background-image', "url('pt_button.png')");
+                    button.text('Claimed').css('color', '#4caf50');
+                    claimedCount++; // Tıklanan buton sayısını artır
+
+                    // Progress çubuğunu güncelle
+                    updateProgressBar();
+                }, 100);
             });
 
             // Büyük buton için tüm küçük butonları 'Claimed' yapma
             $('#big-claim-button').on('mousedown', function() {
-                $(this).addClass('press');
+                $(this).css('background-image', "url('bg_button_press.png')");
             }).on('mouseup', function() {
-                $(this).removeClass('press');
+                $(this).css('background-image', "url('bg_botton.png')");
                 
                 // Tüm küçük butonları 'Claimed' yap
                 $('.pt-button').each(function() {
@@ -153,7 +155,7 @@
             // Progress çubuğunu güncelleme işlevi
             function updateProgressBar() {
                 var progressPercentage = (claimedCount / totalButtons) * 100;
-                $('#progress-bar').css('width', progressPercentage + '%');
+                $('#progress-bar').animate({ width: progressPercentage + '%' }, 300);
             }
         });
     </script>
