@@ -44,6 +44,23 @@
             position: absolute;
         }
 
+        /* Büyük buton */
+        .bg-button {
+            width: 111px;
+            height: 28px;
+            background: url('bg_botton.png') no-repeat center center;
+            position: absolute;
+            bottom: 10px;
+            left: 108px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 28px;
+            font-family: Arial, sans-serif;
+            text-shadow: 1px 1px 2px black;
+        }
+
         /* Buton yerleşimi */
         .pt-button-1 { top: 132px; left: 68px; }
         .pt-button-2 { top: 132px; left: 148px; }
@@ -55,20 +72,30 @@
 </head>
 <body>
     <div class="container">
-        <!-- Butonlar -->
+        <!-- Küçük kare altındaki butonlar -->
         <div class="pt-button pt-button-1">Claim</div>
         <div class="pt-button pt-button-2">Claim</div>
         <div class="pt-button pt-button-3">Claim</div>
         <div class="pt-button pt-button-4">Claim</div>
         <div class="pt-button pt-button-5">Claim</div>
         <div class="pt-button pt-button-6">Claim</div>
+
+        <!-- En alt dikdörtgen büyük buton -->
+        <div class="bg-button" id="big-claim-button">Claim All</div>
     </div>
 
     <script>
         $(document).ready(function(){
-            // Butona tıklandığında metni değiştir
+            // Küçük butonlara tıklama işlevi
             $('.pt-button').on('click', function() {
                 $(this).text('Claimed').css('color', '#4caf50');
+            });
+
+            // Büyük butona tıklayınca tüm küçük butonları 'Claimed' yap
+            $('#big-claim-button').on('click', function() {
+                $('.pt-button').each(function() {
+                    $(this).text('Claimed').css('color', '#4caf50');
+                });
             });
         });
     </script>
