@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Tasarım</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> <!-- jQuery'nin eski uyumlu bir sürümü -->
     <style>
         /* Sayfa genel ayarları */
         html, body {
@@ -10,7 +11,7 @@
             background-color: #2b1f1d;
             font-family: Arial, sans-serif;
             color: #ffd700;
-            overflow: hidden; /* Kaydırma çubuklarını gizler */
+            overflow: hidden;
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
@@ -23,16 +24,15 @@
             width: 330px;
             height: 365px;
             background: url('backround.PNG') no-repeat center center;
-            background-size: cover; /* Arka plan görseli tam sığsın */
+            background-size: cover;
             position: relative;
         }
 
-        /* Küçük karelerin altındaki butonlar */
+        /* Butonlar */
         .pt-button {
             width: 44px;
             height: 20px;
             background: url('pt_button.png') no-repeat center center;
-            position: absolute;
             cursor: pointer;
             color: #fff;
             font-size: 10px;
@@ -40,24 +40,8 @@
             line-height: 20px;
             font-family: Arial, sans-serif;
             text-shadow: 1px 1px 2px black;
-        }
-
-        /* En alt dikdörtgendeki büyük buton */
-        .bg-button {
-            width: 111px;
-            height: 28px;
-            background: url('bg_botton.png') no-repeat center center;
+            font-weight: bold;
             position: absolute;
-            bottom: 10px;
-            left: 108px;
-            transform: translateX(-50%);
-            cursor: pointer;
-            color: #fff;
-            font-size: 12px;
-            text-align: center;
-            line-height: 28px;
-            font-family: Arial, sans-serif;
-            text-shadow: 1px 1px 2px black;
         }
 
         /* Buton yerleşimi */
@@ -68,41 +52,25 @@
         .pt-button-5 { top: 274px; left: 148px; }
         .pt-button-6 { top: 274px; left: 231px; }
     </style>
-    <script type="text/javascript">
-        // Focus ve press efektleri için JavaScript fonksiyonları
-        function buttonHover(element, state) {
-            if (state === 'focus') {
-                element.style.backgroundImage = "url('pt_button_focus.png')";
-            } else if (state === 'press') {
-                element.style.backgroundImage = "url('pt_button_press.png')";
-            } else {
-                element.style.backgroundImage = "url('pt_button.png')";
-            }
-        }
-
-        function bgButtonHover(element, state) {
-            if (state === 'focus') {
-                element.style.backgroundImage = "url('bg_button_focus.png')";
-            } else if (state === 'press') {
-                element.style.backgroundImage = "url('bg_button_press.png')";
-            } else {
-                element.style.backgroundImage = "url('bg_botton.png')";
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
-        <!-- Küçük kare altındaki butonlar -->
-        <div class="pt-button pt-button-1" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-2" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-3" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-4" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-5" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-        <div class="pt-button pt-button-6" onmouseover="buttonHover(this, 'focus')" onmousedown="buttonHover(this, 'press')" onmouseup="buttonHover(this, 'focus')" onmouseout="buttonHover(this, 'default')">Claim</div>
-
-        <!-- En alt dikdörtgen butonu -->
-        <div class="bg-button" onmouseover="bgButtonHover(this, 'focus')" onmousedown="bgButtonHover(this, 'press')" onmouseup="bgButtonHover(this, 'focus')" onmouseout="bgButtonHover(this, 'default')">Claim</div>
+        <!-- Butonlar -->
+        <div class="pt-button pt-button-1">Claim</div>
+        <div class="pt-button pt-button-2">Claim</div>
+        <div class="pt-button pt-button-3">Claim</div>
+        <div class="pt-button pt-button-4">Claim</div>
+        <div class="pt-button pt-button-5">Claim</div>
+        <div class="pt-button pt-button-6">Claim</div>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            // Butona tıklandığında metni değiştir
+            $('.pt-button').on('click', function() {
+                $(this).text('Claimed').css('color', '#4caf50');
+            });
+        });
+    </script>
 </body>
 </html>
