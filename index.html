@@ -44,6 +44,11 @@
             position: absolute;
         }
 
+        /* Press durumu için stil */
+        .pt-button.press {
+            background: url('pt_button_press.png') no-repeat center center;
+        }
+
         /* Büyük buton */
         .bg-button {
             width: 111px;
@@ -87,8 +92,16 @@
     <script>
         $(document).ready(function(){
             // Küçük butonlara tıklama işlevi
-            $('.pt-button').on('click', function() {
-                $(this).text('Claimed').css('color', '#4caf50');
+            $('.pt-button').on('mousedown', function() {
+                // Press efekti ekle
+                $(this).addClass('press');
+
+                // Kısa bir süre sonra press efektini kaldır
+                var button = $(this);
+                setTimeout(function() {
+                    button.removeClass('press');
+                    button.text('Claimed').css('color', '#4caf50');
+                }, 100); // 100 ms sonra kaldır
             });
 
             // Büyük butona tıklayınca tüm küçük butonları 'Claimed' yap
