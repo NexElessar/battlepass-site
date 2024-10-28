@@ -46,7 +46,7 @@
             width: 0;
             background-color: #ff8c00;
             position: absolute;
-            top: 3px; /* Çubuğun merkezde görünmesi için */
+            top: 3px;
             left: 8px;
             border-radius: 5px;
             overflow: hidden;
@@ -129,22 +129,32 @@
             var totalButtons = 6; // Toplam küçük buton sayısı
             var claimedCount = 0; // Tıklanan buton sayısı
 
-            // Küçük butonlar için Claim ve Progress güncellemesi
+            // Küçük butonlar için press efekti ve Claim
             $('.pt-button').on('mousedown', function() {
                 var button = $(this);
 
                 // Eğer zaten "Claimed" ise işlem yapma
                 if (button.text() === 'Claimed') return;
 
-                button.text('Claimed').css('color', '#4caf50');
-                claimedCount++; // Tıklanan buton sayısını artır
+                // Press efekti
+                button.css('background-image', "url('pt_button_press.png')");
 
-                // Progress çubuğunu güncelle
-                updateProgressBar();
+                setTimeout(function() {
+                    button.css('background-image', "url('pt_button.png')");
+                    button.text('Claimed').css('color', '#4caf50');
+                    claimedCount++; // Tıklanan buton sayısını artır
+
+                    // Progress çubuğunu güncelle
+                    updateProgressBar();
+                }, 100);
             });
 
-            // Büyük buton için tüm küçük butonları 'Claimed' yapma
+            // Büyük buton için press ve Claim All işlemi
             $('#big-claim-button').on('mousedown', function() {
+                $(this).css('background-image', "url('bg_button_press.png')");
+            }).on('mouseup', function() {
+                $(this).css('background-image', "url('bg_botton.png')");
+
                 // Tüm küçük butonları 'Claimed' yap
                 $('.pt-button').each(function() {
                     var button = $(this);
